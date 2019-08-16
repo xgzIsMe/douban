@@ -28,6 +28,6 @@
             <property value="true" name="enableSubPackages"/>
         </javaClientGenerator>
         <!-- 指定要逆向分析哪些表：根据表要创建javaBean -->
-        <table domainObjectName="book" tableName="book"/>
+        <table domainObjectName="Book" tableName="book"/>
     </context>
 </generatorConfiguration>
