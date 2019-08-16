@@ -17,6 +17,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+      <spring.vision>5.1.5.RELEASE</spring.vision>   <!-- 控制版本号-->
+      <json.version>2.9.9</json.version>
   </properties>
 
   <dependencies>
@@ -26,6 +28,152 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context</artifactId>
+          <version>${spring.vision}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-webmvc</artifactId>
+          <version>${spring.vision}</version>
+          <exclusions>
+              <!--排除重复的Jar包-->
+              <exclusion>
+                  <artifactId>spring-aop</artifactId>
+                  <groupId>org.springframework</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>spring-context</artifactId>
+                  <groupId>org.springframework</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>spring-core</artifactId>
+                  <groupId>org.springframework</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>spring-beans</artifactId>
+                  <groupId>org.springframework</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>spring-expression</artifactId>
+                  <groupId>org.springframework</groupId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-jdbc</artifactId>
+          <version>${spring.vision}</version>
+          <exclusions>
+              <exclusion>
+                  <artifactId>spring-beans</artifactId>
+                  <groupId>org.springframework</groupId>
+              </exclusion>
+              <exclusion>
+                  <artifactId>spring-core</artifactId>
+                  <groupId>org.springframework</groupId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <!--事务是以aop方式织入-->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aspects</artifactId>
+          <version>${spring.vision}</version>
+      </dependency>
+      <!--druid数据源-->
+      <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>druid</artifactId>
+          <version>1.1.19</version>
+      </dependency>
+      <!--mysql驱动-->
+      <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>8.0.12</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+          <version>${json.version}</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-annotations</artifactId>
+          <version>${json.version}</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>${json.version}</version>
+      </dependency>
+      <!--mybatis相关依赖-->
+      <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+          <version>3.5.2</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>1.2.17</version>
+      </dependency>
+      <!--mybatis整合spring需要使用的Jar包-->
+      <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>2.0.0</version>
+      </dependency>
+      <!--假设需要session，或者jstl就需要使用下面的依赖-->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>4.0.1</version>
+          <scope>provided</scope>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+      <dependency>
+          <groupId>javax.servlet.jsp</groupId>
+          <artifactId>jsp-api</artifactId>
+          <version>2.2</version>
+          <scope>provided</scope>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core -->
+      <dependency>
+          <groupId>org.mybatis.generator</groupId>
+          <artifactId>mybatis-generator-core</artifactId>
+          <version>1.3.7</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.18.8</version>
+          <scope>provided</scope>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper -->
+      <dependency>
+          <groupId>com.github.pagehelper</groupId>
+          <artifactId>pagehelper</artifactId>
+          <version>5.1.9</version>
+      </dependency>
   </dependencies>
 
   <build>
@@ -63,5 +211,16 @@
         </plugin>
       </plugins>
     </pluginManagement>
+      <plugins>
+          <plugin>
+              <groupId>org.mybatis.generator</groupId>
+              <artifactId>mybatis-generator-maven-plugin</artifactId>
+              <version>1.3.2</version>
+              <configuration>
+                  <verbose>true</verbose>
+                  <overwrite>true</overwrite>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
 </project>
