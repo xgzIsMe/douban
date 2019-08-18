@@ -30,7 +30,6 @@
 </head>
 <body>
 <!-- saved from url=(0024)https://book.douban.com/ -->
-<script>var _body_start = new Date();</script>
 <link href="static/css/douban/bundle.css" rel="stylesheet" type="text/css">
 <div id="db-global-nav" class="global-nav">
     <div class="bd">
@@ -136,13 +135,9 @@
                 </li>
                 <li><a href="#" target="_blank">电子图书</a>
                 </li>
-                <li><a href="#">豆瓣书店</a>
-                </li>
                 <li><a href="#" target="_blank">2018年度榜单</a>
                 </li>
                 <li><a href="#" target="_blank">2018书影音报告</a>
-                </li>
-                <li class=" book-cart"><a href="#" target="_blank">购物车</a>
                 </li>
             </ul>
         </div>
@@ -185,8 +180,6 @@
                     <div class="bd">
                         <div class="carousel">
                             <div class="slide-list" style="width: 4050px; left: -675px;"><ul class="list-col list-col5 list-express slide-item clone">
-
-
                                 <li class="">
                                     <div class="cover">
                                         <a href="https://book.douban.com/subject/34451942/?icn=index-latestbook-subject" title="闯入者">
