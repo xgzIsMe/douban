@@ -158,7 +158,6 @@
             <div class="article">
                 <div class="section books-express ">
                     <div class="hd">
-
                         <h2 class="">
                             <span class="">新书速递</span>
                             <span class="link-more">
@@ -550,28 +549,28 @@
                                 文学
                             </li>
                             <li>
-                                <a href="https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4" class="tag">小说</a>
+                                <a href="fiction" class="tag">小说</a>
                             </li>
                             <li>
-                                <a href="https://book.douban.com/tag/%E9%9A%8F%E7%AC%94" class="tag">随笔</a>
+                                <a href="#" class="tag">随笔</a>
                             </li>
                             <li>
-                                <a href="https://book.douban.com/tag/%E6%97%A5%E6%9C%AC%E6%96%87%E5%AD%A6" class="tag">日本文学</a>
+                                <a href="#" class="tag">日本文学</a>
                             </li>
                             <li class="last">
-                                <a href="https://book.douban.com/tag/%E6%95%A3%E6%96%87" class="tag">散文</a>
+                                <a href="#" class="tag">散文</a>
                             </li>
                             <li>
-                                <a href="https://book.douban.com/tag/%E8%AF%97%E6%AD%8C" class="tag">诗歌</a>
+                                <a href="#" class="tag">诗歌</a>
                             </li>
                             <li>
-                                <a href="https://book.douban.com/tag/%E7%AB%A5%E8%AF%9D" class="tag">童话</a>
+                                <a href="#" class="tag">童话</a>
                             </li>
                             <li>
-                                <a href="https://book.douban.com/tag/%E5%90%8D%E8%91%97" class="tag">名著</a>
+                                <a href="#" class="tag">名著</a>
                             </li>
                             <li class="last">
-                                <a href="https://book.douban.com/tag/%E6%B8%AF%E5%8F%B0" class="tag">港台</a>
+                                <a href="#" class="tag">港台</a>
                             </li>
                             <li class="last">
                                 <a href="https://book.douban.com/tag/?view=type&amp;icn=index-sorttags-hot#%E6%96%87%E5%AD%A6" class="tag more_tag">更多»</a>

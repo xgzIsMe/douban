@@ -43,13 +43,11 @@
 
 
         <div class="top-nav-doubanapp">
-            <a href="https://www.douban.com/doubanapp/app?channel=top-nav" class="lnk-doubanapp">下载豆瓣客户端</a>
             <div id="doubanapp-tip">
                 <a href="https://www.douban.com/doubanapp/app?channel=qipao" class="tip-link">豆瓣 <span class="version">6.0</span> 全新发布</a>
                 <a href="javascript: void 0;" class="tip-close">×</a>
             </div>
             <div id="top-nav-appintro" class="more-items">
-                <p class="appintro-title">豆瓣</p>
                 <p class="qrcode">扫码直接下载</p>
                 <div class="download">
                     <a href="#">iPhone</a>
@@ -149,8 +147,6 @@
                 </li>
                 <li><a href="https://read.douban.com/ebooks/?dcs=book-nav&amp;dcm=douban" target="_blank">电子图书</a>
                 </li>
-                <li><a href="https://market.douban.com/book?utm_campaign=book_nav_freyr&amp;utm_source=douban&amp;utm_medium=pc_web">豆瓣书店</a>
-                </li>
                 <li><a href="https://book.douban.com/annual/2018?source=navigation" target="_blank">2018年度榜单</a>
                 </li>
                 <li><a href="https://www.douban.com/standbyme/2018?source=navigation" target="_blank">2018书影音报告</a>
@@ -160,7 +156,7 @@
             </ul>
         </div>
 
-        <a href="https://book.douban.com/annual/2018?source=book_navigation" class="bookannual2018"></a>
+        <a href="#" class="bookannual2018"></a>
     </div>
 </div>
 <div id="wrapper">
@@ -174,9 +170,6 @@
             <div class="article">
                 <div class="indent">
                     <div class="subjectwrap clearfix">
-
-
-
 
                         <div class="subject clearfix">
                             <div id="mainpic" class="">
@@ -219,7 +212,7 @@
 
                         <div id="interest_sectl" class="">
                             <div class="rating_wrap clearbox" rel="v:rating">
-                                <div class="rating_logo">豆瓣评分</div>
+                                <div class="rating_logo">评分</div>
                                 <div class="rating_self clearfix" typeof="v:Rating">
                                     <strong class="ll rating_num " property="v:average"> 8.7 </strong>
                                     <span property="v:best" content="10.0"></span>
