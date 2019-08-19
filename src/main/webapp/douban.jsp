@@ -99,33 +99,16 @@
             <div>
             </div>
             <div class="nav-search">
-                <form action="" method="get">
+                <form action="${pageContext.request.contextPath}/search" method="get">
                     <fieldset>
                         <legend>搜索：</legend>
                         <label for="inp-query">
                         </label>
-                        <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="书名、作者、ISBN" value="" autocomplete="off"></div>
+                        <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="书名" value="" autocomplete="off"></div>
                         <div class="inp-btn"><input type="submit" value="搜索"></div>
-                        <input type="hidden" name="cat" value="1001">
                     </fieldset>
                 </form>
             </div>
-        </div>
-    </div>
-    <div class="nav-secondary">
-
-
-        <div class="nav-items">
-            <ul>
-                <li><a href="#">购书单</a>
-                </li>
-                <li><a href="#" target="_blank">电子图书</a>
-                </li>
-                <li><a href="#" target="_blank">2018年度榜单</a>
-                </li>
-                <li><a href="#" target="_blank">2018书影音报告</a>
-                </li>
-            </ul>
         </div>
     </div>
 </div>
@@ -133,7 +116,7 @@
 
     <!-- douban ad begin -->
     <div id="dale_book_home_top_super_banner" class="ad-placeholder" style="margin: -18px 0 0;" ad-status="appended" data-sell-type="COMPLEMENT" data-type="DoubanRender" data-version="3.2.13">
-        <iframe src="static/img/025dc4fdd3918f9.jpg" sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation" width="1040" height="98" frameborder="0" scrolling="no" name="dale_book_home_top_super_banner_frame" id="dale_book_home_top_super_banner_frame" style="position: relative; margin: 0px 0px 20px; display: block; width: 1040px; height: 98px; overflow: hidden;"></iframe></div>
+        <iframe src="static/img/log1.jpg" sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation" width="1040" height="98" frameborder="0" scrolling="no" name="dale_book_home_top_super_banner_frame" id="dale_book_home_top_super_banner_frame" style="position: relative; margin: 0px 0px 20px; display: block; width: 1040px; height: 98px; overflow: hidden;"></iframe></div>
     <!-- douban ad end -->
     <div id="content">
 
@@ -257,7 +240,7 @@
                 </div>
 
                 <!-- douban ad begin -->
-                <div id="dale_book_home_left_top" class="ad-placeholder" style="margin:-30px 0 30px;" ad-status="appended" data-sell-type="COMPLEMENT" data-type="DoubanRender" data-version="3.2.13"><iframe src="static/img/f1613fb9e82fc9d.jpg" sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation" width="675" height="112" frameborder="0" scrolling="no" name="dale_book_home_left_top_frame" id="dale_book_home_left_top_frame" style="position: relative; margin: 0px 0px 20px; display: block; width: 675px; height: 112px; overflow: hidden;"></iframe></div>
+                <div id="dale_book_home_left_top" class="ad-placeholder" style="margin:-30px 0 30px;" ad-status="appended" data-sell-type="COMPLEMENT" data-type="DoubanRender" data-version="3.2.13"><iframe src="static/img/log2.jpg" sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation" width="675" height="112" frameborder="0" scrolling="no" name="dale_book_home_left_top_frame" id="dale_book_home_left_top_frame" style="position: relative; margin: 0px 0px 20px; display: block; width: 675px; height: 112px; overflow: hidden;"></iframe></div>
                 <!-- douban app end -->
 
                 <div class="section book_information">
@@ -776,7 +759,6 @@
                         <ul class="list list-ranking">
                             <c:forEach items="${books}" var="book" begin="20" end="29">
                             <li class="item">
-                                <span class="rank-num">1.</span>
                                 <div class="book-info">
                                     <a href="#" class="name" target="_blank">${book.bookname}</a>
                                     <div class="author">${book.bookauthor}</div>

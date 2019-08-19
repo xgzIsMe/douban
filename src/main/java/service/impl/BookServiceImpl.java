@@ -35,4 +35,9 @@ public class BookServiceImpl implements BookService {
     public int updateByPrimaryKey(Book record) {
         return bookMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public List<Book> selectByBookName(String bookname) {
+        return bookMapper.selectByBookName(bookname);
+    }
 }

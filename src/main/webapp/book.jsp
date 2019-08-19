@@ -116,14 +116,13 @@
             <div>
             </div>
             <div class="nav-search">
-                <form action="https://book.douban.com/subject_search" method="get">
+                <form action="${pageContext.request.contextPath}/search" method="get">
                     <fieldset>
                         <legend>搜索：</legend>
                         <label for="inp-query">
                         </label>
-                        <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="书名、作者、ISBN" value="" autocomplete="off"></div>
+                        <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="书名" value="" autocomplete="off"></div>
                         <div class="inp-btn"><input type="submit" value="搜索"></div>
-                        <input type="hidden" name="cat" value="1001">
                     </fieldset>
                 </form>
             </div>

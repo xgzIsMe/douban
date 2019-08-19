@@ -20,4 +20,7 @@ public interface BookService {
 
 
     int updateByPrimaryKey(Book record);
+
+
+    List<Book> selectByBookName(String bookname);
 }

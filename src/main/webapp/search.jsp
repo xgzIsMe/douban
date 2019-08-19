@@ -9,7 +9,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="zh-cmn-Hans" class="ua-windows ua-webkit book-new-nav"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>
-        图书标签: 小说
+        查询结果
     </title>
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
@@ -17,15 +17,12 @@
     <link href="static/css/fiction/init.css" rel="stylesheet">
     <style type="text/css"></style>
     <link rel="stylesheet" href="static/css/fiction/28fc3e84f96f7794.css">
-    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
 </head>
 <body>
-
 <link href="static/css/fiction/bundle.css" rel="stylesheet" type="text/css">
-
 <div id="db-global-nav" class="global-nav">
     <div class="bd">
-
         <div class="top-nav-info">
             <a href="#" class="nav-login" rel="nofollow">登录/注册</a>
         </div>
@@ -93,14 +90,13 @@
             <div>
             </div>
             <div class="nav-search">
-                <form action="https://book.douban.com/subject_search" method="get">
+                <form action="${pageContext.request.contextPath}/search" method="get">
                     <fieldset>
                         <legend>搜索：</legend>
                         <label for="inp-query">
                         </label>
-                        <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="书名、作者、ISBN" value="" autocomplete="off"></div>
+                        <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="书名" value="" autocomplete="off"></div>
                         <div class="inp-btn"><input type="submit" value="搜索"></div>
-                        <input type="hidden" name="cat" value="1001">
                     </fieldset>
                 </form>
             </div>
@@ -130,7 +126,7 @@
 
     <div id="content">
 
-        <h1>图书标签: 小说</h1>
+        <h1>查询结果</h1>
 
         <div class="grid-16-8 clearfix">
 
@@ -150,68 +146,68 @@
                     </div>
 
                     <ul class="subject-list">
-<c:if test="${!empty page.list}">
-    <c:forEach items="${page.list}" var="f">
-                        <li class="subject-item">
-                            <div class="pic">
-                                <a class="nbg" href="#" >
-                                    <img class="" src="static/${f.bookimage}" width="90">
-                                </a>
-                            </div>
-                            <div class="info">
-                                <h2 class="">
-                                    <a href="#">
-                                        ${f.bookname}
-                                    </a>
-                                </h2>
-                                <div class="pub">
-                                    ${f.bookauthor}/ ${f.bookpublic}/${f.bookyear} /${f.price}元
-                                </div>
-                                <div class="star clearfix">
-                                    <span class="allstar45"></span>
-                                    <span class="rating_nums">8.8</span>
-                                    <span class="pl">
+                        <c:if test="${!empty page.list}">
+                            <c:forEach items="${page.list}" var="f">
+                                <li class="subject-item">
+                                    <div class="pic">
+                                        <a class="nbg" href="#" >
+                                            <img class="" src="static/${f.bookimage}" width="90">
+                                        </a>
+                                    </div>
+                                    <div class="info">
+                                        <h2 class="">
+                                            <a href="#">
+                                                    ${f.bookname}
+                                            </a>
+                                        </h2>
+                                        <div class="pub">
+                                                ${f.bookauthor}/ ${f.bookpublic}/${f.bookyear} /${f.price}元
+                                        </div>
+                                        <div class="star clearfix">
+                                            <span class="allstar45"></span>
+                                            <span class="rating_nums">8.8</span>
+                                            <span class="pl">
         (0人评价)
     </span>
-                                </div>
-                                <p>${f.bookdcb} </p>
-                                <div class="ft">
-                                    <div class="collect-info">
+                                        </div>
+                                        <p>${f.bookdcb} </p>
+                                        <div class="ft">
+                                            <div class="collect-info">
+                                            </div>
+                                            <div class="cart-actions">
+                                            </div>
+                                            <div class="ebook-link">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="cart-actions">
-                                    </div>
-                                    <div class="ebook-link">
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-    </c:forEach>
-</c:if>
+                                </li>
+                            </c:forEach>
+                        </c:if>
                     </ul>
 
                     <!-- 分页条 -->
                     <div class="paginator">
                         <nav aria-label="Page navigation">
-                               <a href="fiction?pn=1" rel="external nofollow" ><span>首页</span></a>
-                                <c:if test="${page.hasPreviousPage }">
-                                        <a href="fiction?pn=${page.pageNum-1}" rel="external nofollow" aria-label="Previous">
-                                            <span aria-hidden="true">«</span>
-                                        </a>
+                            <a href="search?pn=1&search_text=的" rel="external nofollow" ><span>首页</span></a>
+                            <c:if test="${page.hasPreviousPage }">
+                                <a href="search?pn=${page.pageNum-1}&search_text=的" rel="external nofollow" aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                </a>
+                            </c:if>
+                            <c:forEach items="${page.navigatepageNums }" var="page_Num">
+                                <c:if test="${page_Num == page.pageNum }">
+                                    <a href="#" rel="external nofollow" >${page_Num}</a>
                                 </c:if>
-                                <c:forEach items="${page.navigatepageNums }" var="page_Num">
-                                    <c:if test="${page_Num == page.pageNum }">
-                                        <a href="#" rel="external nofollow" >${page_Num}</a>
-                                    </c:if>
-                                    <c:if test="${page_Num != page.pageNum }">
-                                        <a href="fiction?pn=${page_Num}" rel="external nofollow" >${page_Num}</a>
-                                    </c:if>
-                                </c:forEach>
-                                <c:if test="${page.hasNextPage }">
-                                        <a href="fiction?pn=${page.pageNum+1}" rel="external nofollow" aria-label="Next">
-                                            <span aria-hidden="true">»</span>
-                                        </a>
+                                <c:if test="${page_Num != page.pageNum }">
+                                    <a href="search?pn=${page_Num}&search_text=的" rel="external nofollow" >${page_Num}</a>
                                 </c:if>
-                                <a href="fiction?pn=${page.pages}" rel="external nofollow" >末页</a>
+                            </c:forEach>
+                            <c:if test="${page.hasNextPage }">
+                                <a href="search?pn=${page.pageNum+1}&search_text=的" rel="external nofollow" aria-label="Next">
+                                    <span aria-hidden="true">»</span>
+                                </a>
+                            </c:if>
+                            <a href="search?pn=${page.pages}&search_text=的" rel="external nofollow" >末页</a>
                         </nav>
                     </div>
 
@@ -254,23 +250,6 @@
                 </p>
                 <br>
                 <br>
-
-                <div class="block5 movie_show">
-                    <h2>最近受关注的书-小说</h2>
-                    <div class="content clearfix" id="book_rec">
-                        <dl>
-                            <dt><a href="#"><img src="static/img/s33312745.jpg" class="m_sub_img"></a></dt>
-                            <dd><a href="#">欲戴王冠</a>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt><a href="#"><img src="static/img/s33296419.jpg" class="m_sub_img"></a></dt>
-                            <dd><a href="#">美国男孩</a>
-                            </dd>
-                        </dl>
-                        <div class="clearfix rr" style="width:100%"></div>
-                    </div>
-                </div>
             </div>
             <div class="extra">
             </div>
@@ -279,5 +258,4 @@
 </div>
 <!-- COLLECTED JS -->
 <!-- mako -->
-
 <div id="search_suggest" style="display: none; top: 78px; left: 402px;"><ul></ul></div><div id="qb-sougou-search" style="display: none; opacity: 0;"><p>搜索</p><p class="last-btn">复制</p><iframe src="static/css/fiction/saved_resource.html"></iframe></div></body></html>
