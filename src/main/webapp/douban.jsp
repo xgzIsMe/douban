@@ -230,10 +230,10 @@
 
                             </ul>
                                 <ul class="list-col list-col5 list-express slide-item clone">
-<c:forEach items="${books}" var="book" begin="0" end="9">
+                                    <c:forEach items="${books}" var="book" begin="0" end="9">
                                     <li class="">
                                         <div class="cover">
-                                            <a href="#" title="${book.bookname}">
+                                            <a href="book?bookid=${book.bookid}">
                                                 <img src="static/${book.bookimage}" class="" width="115px" height="172px" alt="${book.bookname}">
                                             </a>
                                         </div>
@@ -249,25 +249,25 @@
                                                     ${book.booktitle}
                                                 </h4>
                                                 <p>
-                  <span class="author">
-                    ${book.bookauthor}
-                  </span>
+                                              <span class="author">
+                                                ${book.bookauthor}
+                                              </span>
                                                     /
                                                     <span class="year">
-                   ${book.bookyear}
-                  </span>
-                                                    /
+                                               ${book.bookyear}
+                                              </span>
+                                                                                /
                                                     <span class="publisher">
-                    ${book.bookpublic}
-                  </span>
+                                                ${book.bookpublic}
+                                              </span>
                                                 </p>
                                                 <p class="abstract">
-                               ${book.bookdcb}
+                                               ${book.bookdcb}
                                                 </p>
                                             </div>
                                         </div>
                                     </li>
-</c:forEach>
+                                    </c:forEach>
                                 </ul></div>
                         </div>
                     </div>
@@ -383,7 +383,7 @@
                     <c:forEach items="${books}" var="book" begin="10" end="19">
                             <li class="">
                                 <div class="cover">
-                                    <a href="book?bookid=${book.bookid}">
+                                    <a href="#">
                                         <img src="static/${book.bookimage}" alt="${book.bookname}" class="">
                                     </a>
                                 </div>
