@@ -25,10 +25,11 @@ public class DouBanController {
         return "douban";
     }
     @RequestMapping("/book")
-    @ResponseBody
     public String showBook(Model model, @RequestParam("bookid") Integer bookid){
         Book book=bookService.selectByPrimaryKey(bookid);
+        List<Book> books=bookService.selectAll();
         model.addAttribute("book",book);
+        model.addAttribute("books",books);
         return "book";
     }
 }

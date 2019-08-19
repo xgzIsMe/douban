@@ -9,7 +9,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="zh-cmn-Hans" class="ua-windows ua-webkit book-new-nav"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>国语四千年来变化潮流图（影印本） (豆瓣)</title>
+    <title>${book.bookname}</title>
 
     <link type="text/css" rel="stylesheet" href="static/css/book/dialog.css">
     <meta http-equiv="Pragma" content="no-cache">
@@ -38,7 +38,7 @@
     <div class="bd">
 
         <div class="top-nav-info">
-            <a href="https://accounts.douban.com/passport/login?source=book" class="nav-login" rel="nofollow">登录/注册</a>
+            <a href="#" class="nav-login" rel="nofollow">登录/注册</a>
         </div>
 
 
@@ -52,9 +52,9 @@
                 <p class="appintro-title">豆瓣</p>
                 <p class="qrcode">扫码直接下载</p>
                 <div class="download">
-                    <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=iOS">iPhone</a>
+                    <a href="#">iPhone</a>
                     <span>·</span>
-                    <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=Android" class="download-android">Android</a>
+                    <a href="#" class="download-android">Android</a>
                 </div>
             </div>
         </div>
@@ -166,7 +166,7 @@
 <div id="wrapper">
     <div id="dale_book_subject_top_icon" ad-status="loaded"></div>
     <h1>
-        <span property="v:itemreviewed">国语四千年来变化潮流图（影印本）</span>
+        <span property="v:itemreviewed">${book.bookname}</span>
         <div class="clear"></div>
     </h1>
     <div id="content">
@@ -180,62 +180,40 @@
 
                         <div class="subject clearfix">
                             <div id="mainpic" class="">
-                                <a class="nbg" href="static/css/book/s32758410.jpg" title="国语四千年来变化潮流图（影印本）">
-                                    <img src="static/css/book/s32758410.jpg" title="点击看大图" alt="国语四千年来变化潮流图（影印本）" rel="v:photo" style="width: 135px;max-height: 200px;">
+                                <a class="nbg" href="static/${book.bookimage}">
+                                    <img src="static/${book.bookimage}" title="点击看大图" alt="${book.bookname}" rel="v:photo" style="width: 135px;max-height: 200px;">
                                 </a>
-
-
 
                             </div>
 
-
-
-
-
                             <div id="info" class="">
-
-
-
-
 
 
     <span>
       <span class="pl"> 作者</span>:
 
 
-            <a class="" href="https://book.douban.com/search/%E9%BB%8E%E9%94%A6%E7%86%99">黎锦熙</a>
+            <a class="" href="#">${book.bookauthor}</a>
     </span><br>
 
 
-
-
-                                <span class="pl">出版社:</span> 后浪丨北京联合出版公司<br>
+                                <span class="pl">出版社:</span> ${book.bookpublic}<br>
 
 
 
-                                <span class="pl">出版年:</span> 2019-7<br>
+                                <span class="pl">出版年:</span> ${book.bookyear}<br>
 
 
-                                <span class="pl">页数:</span> 32<br>
+
+                                <span class="pl">定价:</span> ${book.price}元<br>
 
 
-                                <span class="pl">定价:</span> 68.00元<br>
 
-
-                                <span class="pl">装帧:</span> 袋装<br>
-
-
-                                <span class="pl">ISBN:</span> 9787559631534<br>
-
+                                <span class="pl">ISBN:</span>${book.isbn}<br>
 
                             </div>
 
                         </div>
-
-
-
-
-
 
 
 
@@ -249,14 +227,11 @@
                                         <div class="ll bigstar45"></div>
                                         <div class="rating_sum">
                 <span class="">
-                    <a href="https://book.douban.com/subject/33950352/collections" class="rating_people"><span property="v:votes">41</span>人评价</a>
+                    <a href="#" class="rating_people"><span property="v:votes">41</span>人评价</a>
                 </span>
                                         </div>
-
-
                                     </div>
                                 </div>
-
 
 
                                 <span class="stars5 starstop" title="力荐">
@@ -343,14 +318,8 @@
 .intro p{text-indent:2em;word-break:normal;}
 </style>
 <div class="intro">
-    <p>一张信息图厘清四千年来汉字、汉语和文学流变</p>
-    <p>语言学大家黎锦熙创制，赵元任、钱玄同、刘半农参与修订</p>
-    <p>1926年费城世界博览会获大奖教育展品</p>
-    <p>近百年来初次再版</p>
-    <p>汉字声韵形义变迁举例 历代文学作家作品举要</p>
-    <p>◎ 编辑推荐</p>
-    <p>☆ 一张信息图厘清四千年来汉语、文学的源流变迁</p>
-    <p>这张图展 示了汉语在汉字、音韵、训诂等方面的发展历程，总结了各个历史时期的主要文学作家、作品和文体。信息图式的整理方式，不仅化繁为简、纲举目张，还揭示了不同流派之间的影响。通过这一张图，轻松掌握四千年来语言文字的变迁和文学的源流派别。</p>    <p>☆“现代汉语奠基人”之一黎锦熙先生创编，赵元任、钱玄同、刘半农等多位语言大家参与修订</p>    <p>此图由著名语言学家、教育家黎锦熙先生创编，黎锦熙先生毕生致力于语言文字的研究与教学工作，是“现代汉语奠基人”之一。他纵观国语四千年来的源流变迁，高屋建瓴地总结语言文字与文学文体...</p><p><a href="javascript:void(0)" class="j a_show_full">(展开全部)</a></p></div>
+    <p>${book.bookdcb}
+    <a href="javascript:void(0)" class="j a_show_full">(展开全部)</a></p></div>
        </span>
                         <span class="all hidden">
         <div class="">
@@ -391,7 +360,7 @@
                             <span class="">
         <a class="  tag" href="https://book.douban.com/tag/%E6%B1%89%E8%AF%AD%E5%8F%B2">汉语史</a> &nbsp;    </span>
                             <span class="">
-        <a class="  tag" href="https://book.douban.com/tag/%E9%BB%8E%E9%94%A6%E7%86%99">黎锦熙</a> &nbsp;    </span>
+        <a class="  tag" href="https://book.douban.com/tag/%E9%BB%8E%E9%94%A6%E7%86%99">${book.bookauthor}</a> &nbsp;    </span>
                             <span class="">
         <a class="  tag" href="https://book.douban.com/tag/%E6%96%87%E5%8C%96">文化</a> &nbsp;    </span>
                             <span class="">
@@ -407,68 +376,25 @@
 
                     <div id="db-rec-section" class="block5 subject_show knnlike">
                         <h2>
-                            <span class="">喜欢读"国语四千年来变化潮流图（影印本）"的人也喜欢</span>
+                            <span class="">喜欢读《${book.bookname}》的人也喜欢</span>
                             &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
 
                         </h2>
 
 
                         <div class="content clearfix">
-
+                            <c:forEach items="${books}" var="b" begin="5" end="9">
                             <dl class="">
                                 <dt>
-                                    <a href="https://book.douban.com/subject/34448549/" ><img class="m_sub_img" src="static/css/book/s33446786.jpg"></a>
+                                    <a href="/book" ><img class="m_sub_img" src="static/${b.bookimage}"></a>
                                 </dt>
                                 <dd>
-                                    <a href="https://book.douban.com/subject/34448549/"  class="">
-                                        二玄社书法讲座：楷书
+                                    <a href="#"  class="">
+                                        ${b.bookname}
                                     </a>
                                 </dd>
                             </dl>
-
-                            <dl class="">
-                                <dt>
-                                    <a href="https://book.douban.com/subject/33445600/" ><img class="m_sub_img" src="static/css/book/s33438550.jpg"></a>
-                                </dt>
-                                <dd>
-                                    <a href="https://book.douban.com/subject/33445600/" class="">
-                                        知史
-                                    </a>
-                                </dd>
-                            </dl>
-
-                            <dl class="">
-                                <dt>
-                                    <a href="https://book.douban.com/subject/33395218/" ><img class="m_sub_img" src="static/css/book/s33314281.jpg"></a>
-                                </dt>
-                                <dd>
-                                    <a href="https://book.douban.com/subject/33395218/" class="">
-                                        秦汉帝国
-                                    </a>
-                                </dd>
-                            </dl>
-
-                            <dl class="">
-                                <dt>
-                                    <a href="https://book.douban.com/subject/30464599/" ><img class="m_sub_img" src="static/css/book/s30015520.jpg"></a>
-                                </dt>
-                                <dd>
-                                    <a href="https://book.douban.com/subject/30464599/" class="">
-                                        唐文治文集
-                                    </a>
-                                </dd>
-                            </dl>
-
-                            <dl class="">
-                                <dt>
-                                    <a href="https://book.douban.com/subject/27147644/" ><img class="m_sub_img" src="static/css/book/s29552099.jpg"></a>
-                                </dt>
-                                <dd>
-                                    <a href="https://book.douban.com/subject/27147644/" class="">
-                                        宋本后汉书
-                                    </a>
-                                </dd>
-                            </dl>
+                            </c:forEach>
                             <dl class="clear"></dl>
                         </div>
                     </div>
@@ -571,8 +497,6 @@
 
                             </ul>
                         </div>
-
-
 
                         <div class="comment-list new noshow">
                             <ul>
