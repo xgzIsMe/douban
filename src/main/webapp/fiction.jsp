@@ -76,7 +76,7 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣摄影</a>
+                                    <a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">摄影</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -89,12 +89,10 @@
     </div>
 </div>
 <link href="static/css/fiction/bundle(1).css" rel="stylesheet" type="text/css">
-
 <div id="db-nav-book" class="nav">
     <div class="nav-wrap">
         <div class="nav-primary">
-            <div class="nav-logo">
-                <a href="https://book.douban.com/">读书</a>
+            <div>
             </div>
             <div class="nav-search">
                 <form action="https://book.douban.com/subject_search" method="get">
@@ -126,7 +124,6 @@
                 </li>
             </ul>
         </div>
-        <a href="https://book.douban.com/annual/2018?source=book_navigation" class="bookannual2018"></a>
     </div>
 </div>
 

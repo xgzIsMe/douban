@@ -44,8 +44,6 @@
 
         <div class="top-nav-doubanapp">
             <div id="doubanapp-tip">
-                <a href="https://www.douban.com/doubanapp/app?channel=qipao" class="tip-link">豆瓣 <span class="version">6.0</span> 全新发布</a>
-                <a href="javascript: void 0;" class="tip-close">×</a>
             </div>
             <div id="top-nav-appintro" class="more-items">
                 <p class="qrcode">扫码直接下载</p>
@@ -62,9 +60,6 @@
 
         <div class="global-nav-items">
             <ul>
-                <li class="">
-                    <a href="https://www.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-main&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣</a>
-                </li>
                 <li class="on">
                     <a href="https://book.douban.com/" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
                 </li>
@@ -89,9 +84,6 @@
                 <li class="">
                     <a href="https://time.douban.com/?dt_time_source=douban-web_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
                 </li>
-                <li class="">
-                    <a href="https://market.douban.com/?utm_campaign=douban_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-market&quot;,&quot;uid&quot;:&quot;0&quot;}">豆品</a>
-                </li>
                 <li>
                     <a href="https://book.douban.com/subject/33950352/?icn=index-latestbook-subject#more" class="bn-more"><span>更多</span></a>
                     <div class="more-items">
@@ -99,7 +91,7 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣摄影</a>
+                                    <a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">摄影</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -121,8 +113,7 @@
 <div id="db-nav-book" class="nav">
     <div class="nav-wrap">
         <div class="nav-primary">
-            <div class="nav-logo">
-                <a href="https://book.douban.com/">豆瓣读书</a>
+            <div>
             </div>
             <div class="nav-search">
                 <form action="https://book.douban.com/subject_search" method="get">
@@ -155,8 +146,6 @@
                 </li>
             </ul>
         </div>
-
-        <a href="#" class="bookannual2018"></a>
     </div>
 </div>
 <div id="wrapper">
@@ -343,7 +332,7 @@
                     <div id="db-tags-section" class="blank20">
 
                         <h2>
-                            <span class="">豆瓣成员常用的标签(共41个)</span>
+                            <span class="">常用的标签(共41个)</span>
                             &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
 
                         </h2>
@@ -564,23 +553,6 @@
                     <!-- douban ad end -->
                 </div>
             </div>
-        </div>
-        <div id="footer">
-<span id="icp" class="fleft gray-link">
-    © 2005－2019 douban.com, all rights reserved 北京豆网科技有限公司
-</span>
-            <a href="https://www.douban.com/hnypt/variformcyst.py" style="display: none;"></a>
-            <span class="fright">
-    <a href="https://www.douban.com/about">关于豆瓣</a>
-    · <a href="https://www.douban.com/jobs">在豆瓣工作</a>
-    · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
-    · <a href="https://www.douban.com/about/legal">法律声明</a>
-
-    · <a href="https://help.douban.com/?app=book" target="_blank">帮助中心</a>
-    · <a href="https://book.douban.com/library_invitation">图书馆合作</a>
-    · <a href="https://www.douban.com/doubanapp/">移动应用</a>
-    · <a href="https://www.douban.com/partner/">豆瓣广告</a>
-</span>
         </div>
     </div>
 

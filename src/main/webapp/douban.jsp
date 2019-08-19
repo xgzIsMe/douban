@@ -15,12 +15,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
     <meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.douban.com/book/">
-    <meta name="keywords" content="豆瓣读书,新书速递,畅销书,书评,书单">
+    <meta name="keywords" content="读书,新书速递,畅销书,书评,书单">
     <meta name="description" content="记录你读过的、想读和正在读的书，顺便打分，添加标签及个人附注，写评论。根据你的口味，推荐适合的书给你。">
     <meta property="wb:webmaster" content="7c86191e898cd20d">
     <meta property="qc:admins" content="1520412177364752166375">
     <title>
-        豆瓣读书
+        读书
     </title>
     <link href="static/css/douban/master.css" rel="stylesheet" type="text/css">
     <link href="static/css/douban/init.css" rel="stylesheet">
@@ -39,27 +39,16 @@
             <a href="#" class="nav-login" rel="nofollow">登录/注册</a>
         </div>
         <div class="top-nav-doubanapp">
-            <a href="#" class="lnk-doubanapp">下载豆瓣客户端</a>
             <div id="doubanapp-tip">
-                <a href="#" class="tip-link">豆瓣 <span class="version">6.0</span> 全新发布</a>
-                <a href="javascript: void 0;" class="tip-close">×</a>
             </div>
             <div id="top-nav-appintro" class="more-items">
-                <p class="appintro-title">豆瓣</p>
-                <p class="qrcode">扫码直接下载</p>
                 <div class="download">
-                    <a href="#">iPhone</a>
-                    <span>·</span>
-                    <a href="#" class="download-android">Android</a>
                 </div>
             </div>
         </div>
 
         <div class="global-nav-items">
             <ul>
-                <li class="">
-                    <a href="https://www.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-main&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣</a>
-                </li>
                 <li class="on">
                     <a href="https://book.douban.com/" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
                 </li>
@@ -84,9 +73,6 @@
                 <li class="">
                     <a href="https://time.douban.com/?dt_time_source=douban-web_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
                 </li>
-                <li class="">
-                    <a href="https://market.douban.com/?utm_campaign=douban_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-market&quot;,&quot;uid&quot;:&quot;0&quot;}">豆品</a>
-                </li>
                 <li>
                     <a href="#more" class="bn-more"><span>更多</span></a>
                     <div class="more-items">
@@ -94,7 +80,7 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣摄影</a>
+                                    <a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">摄影</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -110,8 +96,7 @@
 <div id="db-nav-book" class="nav">
     <div class="nav-wrap">
         <div class="nav-primary">
-            <div class="nav-logo">
-                <a href="https://book.douban.com/">豆瓣读书</a>
+            <div>
             </div>
             <div class="nav-search">
                 <form action="" method="get">
@@ -142,7 +127,6 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="bookannual2018"></a>
     </div>
 </div>
 <div id="wrapper">
@@ -312,9 +296,9 @@
                                     <a href="https://www.douban.com/note/730074989/">
                                         <div class="cover"></div>
                                         <div class="content">
-                                            <span class="title">【豆瓣鉴书团 第123期】《重拾加布里尔的花园》这本书怎么样？</span>
-                                            <span class="meta">豆瓣读书</span>
-                                            <p class="abstract">大家好，这里是豆瓣鉴书团。 本期活动诚邀大家先行品鉴的书是法国小说《重拾加布里尔的花园》。活动赠书为50本纸书，由华景时代提供。 马丁·鲁滨孙，性格孤僻，活在自己的世界里，加布里尔是他生命里唯一的爱和...</p>
+                                            <span class="title">【鉴书团 第123期】《重拾加布里尔的花园》这本书怎么样？</span>
+                                            <span class="meta">读书</span>
+                                            <p class="abstract">大家好，这里是鉴书团。 本期活动诚邀大家先行品鉴的书是法国小说《重拾加布里尔的花园》。活动赠书为50本纸书，由华景时代提供。 马丁·鲁滨孙，性格孤僻，活在自己的世界里，加布里尔是他生命里唯一的爱和...</p>
                                         </div>
                                     </a>
                                 </li>
@@ -352,9 +336,9 @@
                                     <a href="https://www.douban.com/note/730074989/">
                                         <div class="cover"></div>
                                         <div class="content">
-                                            <span class="title">【豆瓣鉴书团 第123期】《重拾加布里尔的花园》这本书怎么样？</span>
-                                            <span class="meta">豆瓣读书</span>
-                                            <p class="abstract">大家好，这里是豆瓣鉴书团。 本期活动诚邀大家先行品鉴的书是法国小说《重拾加布里尔的花园》。活动赠书为50本纸书，由华景时代提供。 马丁·鲁滨孙，性格孤僻，活在自己的世界里，加布里尔是他生命里唯一的爱和...</p>
+                                            <span class="title">【鉴书团 第123期】《重拾加布里尔的花园》这本书怎么样？</span>
+                                            <span class="meta">读书</span>
+                                            <p class="abstract">大家好，这里是鉴书团。 本期活动诚邀大家先行品鉴的书是法国小说《重拾加布里尔的花园》。活动赠书为50本纸书，由华景时代提供。 马丁·鲁滨孙，性格孤僻，活在自己的世界里，加布里尔是他生命里唯一的爱和...</p>
                                         </div>
                                     </a>
                                 </li></ul>
@@ -892,7 +876,7 @@
 
 
                     <h2 class="">
-                        <span class="">豆瓣图书250</span>
+                        <span class="">图书250</span>
                         <span class="link-more">
         <a class="" href="https://book.douban.com/top250?icn=index-book250-all">更多»</a>
       </span>
@@ -1067,12 +1051,6 @@
 
 
                 <div class="contact">
-                    <h2>联系我们</h2>
-                    <ul class="apply-links">
-                        <li>
-                            合作联系：<img src="static/img/email_book.png">
-                        </li>
-                    </ul>
                 </div>
 
                 <!-- douban app begin -->
@@ -1098,23 +1076,10 @@
 
     <div id="footer">
 
-<span id="icp" class="fleft gray-link">
-    © 2005－2019 douban.com, all rights reserved 北京豆网科技有限公司
-</span>
+
 
         <a href="https://www.douban.com/hnypt/variformcyst.py" style="display: none;"></a>
 
-        <span class="fright">
-    <a href="https://www.douban.com/about">关于豆瓣</a>
-    · <a href="https://www.douban.com/jobs">在豆瓣工作</a>
-    · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
-    · <a href="https://www.douban.com/about/legal">法律声明</a>
-
-    · <a href="https://help.douban.com/?app=book" target="_blank">帮助中心</a>
-    · <a href="https://book.douban.com/library_invitation">图书馆合作</a>
-    · <a href="https://www.douban.com/doubanapp/">移动应用</a>
-    · <a href="https://www.douban.com/partner/">豆瓣广告</a>
-</span>
         <!-- fram23-docker-->
 
         <div id="search_suggest" style="display: none; top: 78px; left: 162.4px;"><ul></ul></div><div class="book-bubble" style="width: 300px; top: 537.2px; left: 258px; display: none;"><b class="bubble-close">×</b><div class="bubble-content">
