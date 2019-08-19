@@ -365,8 +365,6 @@
 
 
 
-
-
                 <div class="section popular-books">
                     <div class="hd">
                         <h2>
@@ -382,17 +380,16 @@
                     <div class="bd">
                         <ul class="list-col list-col2 list-summary s" data-dstat-areaid="61" data-dstat-mode="click,expose">
 
-
-
+                    <c:forEach items="${books}" var="book" begin="10" end="19">
                             <li class="">
                                 <div class="cover">
-                                    <a href="https://book.douban.com/subject/30259677/?icn=index-topchart-subject">
-                                        <img src="static/img/s30022290.jpg" alt="焚舟纪" class="">
+                                    <a href="book?bookid=${book.bookid}">
+                                        <img src="static/${book.bookimage}" alt="${book.bookname}" class="">
                                     </a>
                                 </div>
                                 <div class="info">
                                     <h4 class="title">
-                                        <a href="https://book.douban.com/subject/30259677/?icn=index-topchart-subject" class="">焚舟纪</a>
+                                        <a href="#" class="">${book.bookname}</a>
                                     </h4>
                                     <p class="entry-star-small">
         <span class="allstar45 star-img">
@@ -402,358 +399,23 @@
         </span>
                                     </p>
                                     <p class="author">
-                                        作者：[英] 安吉拉·卡特
+                                        作者：${book.bookauthor}
                                     </p>
                                     <p class="book-list-classification">
-                                        英国文学&nbsp;/&nbsp;短篇小说
+                                        ${book.bookcategory}
                                     </p>
                                     <p class="extra-info">
 
                                     </p>
 
                                     <p class="reviews">
-                                        这本全集里的作品正显示我们的损失有多大。
-                                        (<a href="https://book.douban.com/review/10283796/?icn=index-topchart-subject">purplepine评论</a>)
+                                        ${book.bookdcb}
+                                        (<a href="#">purplepine评论</a>)
                                     </p>
                                 </div>
                             </li>
 
-
-
-
-                            <li class="">
-                                <div class="cover">
-                                    <a  href="https://book.douban.com/subject/33424487/?icn=index-topchart-subject">
-                                        <img src="static/img/s32332471.jpg" alt="时间的秩序" class="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title">
-                                        <a  href="https://book.douban.com/subject/33424487/?icn=index-topchart-subject" class="">时间的秩序</a>
-                                    </h4>
-                                    <p class="entry-star-small">
-        <span class="allstar50 star-img">
-        </span>
-                                        <span class="average-rating">
-          9.3
-        </span>
-                                    </p>
-                                    <p class="author">
-                                        作者：[意]卡洛·罗韦利
-                                    </p>
-                                    <p class="book-list-classification">
-                                        科普&nbsp;/&nbsp;物理
-                                    </p>
-                                    <p class="extra-info">
-
-                                        <span class="meta-label">有电子书</span>
-                                    </p>
-
-                                    <p class="reviews">
-                                        要像读诗一样，读这本关于时间的书。
-                                        (<a  href="https://book.douban.com/review/10288492/?icn=index-topchart-subject">victorzhu评论</a>)
-                                    </p>
-                                </div>
-                            </li>
-
-
-
-
-                            <li class="">
-                                <div class="cover">
-                                    <a href="https://book.douban.com/subject/30473909/?icn=index-topchart-subject">
-                                        <img src="static/img/s33443865.jpg" alt="OPUS 作品" class="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title">
-                                        <a href="https://book.douban.com/subject/30473909/?icn=index-topchart-subject" class="">OPUS 作品</a>
-                                    </h4>
-                                    <p class="entry-star-small">
-        <span class="allstar45 star-img">
-        </span>
-                                        <span class="average-rating">
-          9.1
-        </span>
-                                    </p>
-                                    <p class="author">
-                                        作者：［日］今 敏
-                                    </p>
-                                    <p class="book-list-classification">
-                                        今敏&nbsp;/&nbsp;漫画
-                                    </p>
-                                    <p class="extra-info">
-
-                                    </p>
-
-                                    <p class="reviews">
-                                        所谓《opus》（作品）正是一部能够解读“今 敏作品”的作品。
-                                        (<a href="https://book.douban.com/review/10378791/?icn=index-topchart-subject">道聴评论</a>)
-                                    </p>
-                                </div>
-                            </li>
-
-
-
-
-                            <li class="">
-                                <div class="cover">
-                                    <a  href="https://book.douban.com/subject/33400679/?icn=index-topchart-subject">
-                                        <img src="static/img/s32327590.jpg" alt="死屋" class="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title">
-                                        <a  href="https://book.douban.com/subject/33400679/?icn=index-topchart-subject" class="">死屋</a>
-                                    </h4>
-                                    <p class="entry-star-small">
-        <span class="allstar50 star-img">
-        </span>
-                                        <span class="average-rating">
-          9.2
-        </span>
-                                    </p>
-                                    <p class="author">
-                                        作者：[英]丹尼尔·比尔
-                                    </p>
-                                    <p class="book-list-classification">
-                                        俄国史&nbsp;/&nbsp;流放制度
-                                    </p>
-                                    <p class="extra-info">
-
-                                    </p>
-
-                                    <p class="reviews">
-                                        当沙皇固执地坚持着流放制度的时候，也给自己造就了掘墓人。
-                                        (<a  href="https://book.douban.com/review/10305979/?icn=index-topchart-subject">雾凇评论</a>)
-                                    </p>
-                                </div>
-                            </li>
-
-
-
-
-                            <li class="">
-                                <div class="cover">
-                                    <a href="https://book.douban.com/subject/33422832/?icn=index-topchart-subject">
-                                        <img src="static/img/s33302678.jpg" alt="聊天记录" class="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title">
-                                        <a href="https://book.douban.com/subject/33422832/?icn=index-topchart-subject" class="">聊天记录</a>
-                                    </h4>
-                                    <p class="entry-star-small">
-        <span class="allstar40 star-img">
-        </span>
-                                        <span class="average-rating">
-          7.2
-        </span>
-                                    </p>
-                                    <p class="author">
-                                        作者：[爱尔兰] 萨莉·鲁尼
-                                    </p>
-                                    <p class="book-list-classification">
-                                        爱尔兰文学&nbsp;/&nbsp;青年
-                                    </p>
-                                    <p class="extra-info">
-
-                                        <span class="meta-label">有电子书</span>
-                                    </p>
-
-                                    <p class="reviews">
-                                        生活最伟大，而萨莉正年轻。
-                                        (<a href="https://book.douban.com/review/10332911/?icn=index-topchart-subject">阿枣评论</a>)
-                                    </p>
-                                </div>
-                            </li>
-
-
-
-
-                            <li class="">
-                                <div class="cover">
-                                    <a  href="https://book.douban.com/subject/34433981/?icn=index-topchart-subject">
-                                        <img src="static/img/s33300134.jpg" alt="汴京之围" class="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title">
-                                        <a  href="https://book.douban.com/subject/34433981/?icn=index-topchart-subject" class="">汴京之围</a>
-                                    </h4>
-                                    <p class="entry-star-small">
-        <span class="allstar45 star-img">
-        </span>
-                                        <span class="average-rating">
-          8.5
-        </span>
-                                    </p>
-                                    <p class="author">
-                                        作者：郭建龙
-                                    </p>
-                                    <p class="book-list-classification">
-                                        宋史&nbsp;/&nbsp;中国历史
-                                    </p>
-                                    <p class="extra-info">
-
-                                    </p>
-
-                                    <p class="reviews">
-                                        靖康之难何以为耻。
-                                        (<a  href="https://book.douban.com/review/10379993/?icn=index-topchart-subject">typacm评论</a>)
-                                    </p>
-                                </div>
-                            </li>
-
-
-
-
-                            <li class="">
-                                <div class="cover">
-                                    <a href="https://book.douban.com/subject/34442090/?icn=index-topchart-subject">
-                                        <img src="static/img/s33305784.jpg" alt="王考" class="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title">
-                                        <a href="https://book.douban.com/subject/34442090/?icn=index-topchart-subject" class="">王考</a>
-                                    </h4>
-                                    <p class="entry-star-small">
-        <span class="allstar45 star-img">
-        </span>
-                                        <span class="average-rating">
-          9.1
-        </span>
-                                    </p>
-                                    <p class="author">
-                                        作者：童伟格
-                                    </p>
-                                    <p class="book-list-classification">
-                                        台湾文学&nbsp;/&nbsp;小说
-                                    </p>
-                                    <p class="extra-info">
-
-                                    </p>
-
-                                    <p class="reviews">
-                                        以写作，化泄时间暴力对内心所造成的冲击，治愈时间之伤。
-                                        (<a href="https://book.douban.com/review/10298657/?icn=index-topchart-subject">朱岳评论</a>)
-                                    </p>
-                                </div>
-                            </li>
-
-
-
-
-                            <li class="">
-                                <div class="cover">
-                                    <a  href="https://book.douban.com/subject/33446318/?icn=index-topchart-subject">
-                                        <img src="static/img/s32319424.jpg" alt="秘境" class="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title">
-                                        <a  href="https://book.douban.com/subject/33446318/?icn=index-topchart-subject" class="">秘境</a>
-                                    </h4>
-                                    <p class="entry-star-small">
-        <span class="allstar45 star-img">
-        </span>
-                                        <span class="average-rating">
-          8.3
-        </span>
-                                    </p>
-                                    <p class="author">
-                                        作者：[美] 乔舒亚·福尔&nbsp;/&nbsp;迪伦·图拉斯&nbsp;/&nbsp;埃拉·莫顿
-                                    </p>
-                                    <p class="book-list-classification">
-
-                                    </p>
-                                    <p class="extra-info">
-
-                                    </p>
-
-                                    <p class="reviews">
-                                        我们足不出户，就可以在书中探险，经历心跳加速。
-                                        (<a  href="https://book.douban.com/review/10300604/?icn=index-topchart-subject">后浪评论</a>)
-                                    </p>
-                                </div>
-                            </li>
-
-
-
-
-                            <li class="">
-                                <div class="cover">
-                                    <a href="https://book.douban.com/subject/33430542/?icn=index-topchart-subject">
-                                        <img src="static/img/s32323954.jpg" alt="沙漏做招牌的疗养院" class="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title">
-                                        <a href="https://book.douban.com/subject/33430542/?icn=index-topchart-subject" class="">沙漏做招牌的疗养院</a>
-                                    </h4>
-                                    <p class="entry-star-small">
-        <span class="allstar45 star-img">
-        </span>
-                                        <span class="average-rating">
-          8.9
-        </span>
-                                    </p>
-                                    <p class="author">
-                                        作者：[波兰] 布鲁诺·舒尔茨
-                                    </p>
-                                    <p class="book-list-classification">
-                                        小说&nbsp;/&nbsp;波兰文学
-                                    </p>
-                                    <p class="extra-info">
-
-                                        <span class="meta-label">有电子书</span>
-                                    </p>
-
-                                    <p class="reviews">
-                                        布鲁诺·舒尔茨往浓烈的意象调子里掺入黑色，使之更加浓烈。
-                                        (<a href="https://book.douban.com/review/10187370/?icn=index-topchart-subject">陆源评论</a>)
-                                    </p>
-                                </div>
-                            </li>
-
-
-
-
-                            <li class="">
-                                <div class="cover">
-                                    <a  href="https://book.douban.com/subject/34440418/?icn=index-topchart-subject">
-                                        <img src="static/img/s33307240.jpg" alt="赵桥村" class="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <h4 class="title">
-                                        <a  href="https://book.douban.com/subject/34440418/?icn=index-topchart-subject" class="">赵桥村</a>
-                                    </h4>
-                                    <p class="entry-star-small">
-        <span class="allstar45 star-img">
-        </span>
-                                        <span class="average-rating">
-          8.9
-        </span>
-                                    </p>
-                                    <p class="author">
-                                        作者：顾湘
-                                    </p>
-                                    <p class="book-list-classification">
-                                        散文&nbsp;/&nbsp;上海
-                                    </p>
-                                    <p class="extra-info">
-
-                                    </p>
-
-                                    <p class="reviews">
-                                        凡是读了这本书想要去看看的，我拍胸脯保证你们都会失望。
-                                        (<a  href="https://book.douban.com/review/10335149/?icn=index-topchart-subject">姜饼吴评论</a>)
-                                    </p>
-                                </div>
-                            </li>
-
+                    </c:forEach>
                         </ul>
                     </div>
                 </div>
@@ -1129,86 +791,16 @@
                         </ul>
 
                         <ul class="list list-ranking">
+                            <c:forEach items="${books}" var="book" begin="20" end="29">
                             <li class="item">
                                 <span class="rank-num">1.</span>
                                 <div class="book-info">
-                                    <a href="https://book.douban.com/subject/34467943/" class="name" target="_blank">然后</a>
-                                    <div class="author">张小厚</div>
+                                    <a href="#" class="name" target="_blank">${book.bookname}</a>
+                                    <div class="author">${book.bookauthor}</div>
                                 </div>
-                                <a href="https://book.douban.com/" target="_blank"><span class="buy-button">去购买</span></a>
+                                <a href="#" target="_blank"><span class="buy-button">去购买</span></a>
                             </li>
-                            <li class="item">
-                                <span class="rank-num">2.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/33428044/" class="name" target="_blank">人人都要有会计思维：给非专业会计人员的会计思维书</a>
-                                    <div class="author">[日]安本隆晴</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=jingdong&amp;srcpage=bestseller&amp;price=4420&amp;pos=2&amp;url=https%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIHZRtYFAcXBFIZWR0yEgRRG1wTChY3EUQDS10iXhBeGlcJDBkNXg9JHUlSSkkFSRwSBFEbXBMKFhgMXgdIMhFeLHosXH5BZDccHG1hV189GDlxelQLWStcEAUUAFwYXCUCFgZRH2slAhM3B3WDo7TKouQHj7%252BNx4%252FCK1olAhYDUh5SEAYTD1wZUyUFIt7VrI23kMuZ387TgjIiN2UraxUyETcKXwZIMhM%253D%26t%3DW1dCFFlQCxxKQgFHRE5XDVULR0UVARYHUh1TER1LQglG&amp;srcsubj=&amp;type=bkbuy&amp;subject=33428044" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">3.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/4913064/" class="name" target="_blank">活着</a>
-                                    <div class="author">余华</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=jingdong&amp;srcpage=bestseller&amp;price=2000&amp;pos=3&amp;url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEgZdGlwQACJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQITD1QcXhcdS0IJRmtBe2EFAXxSFGdWfVFaQW9YSmMmRT9DDh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBpdEwMQAFwrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsVAxoGUh5ZCltXWwg%253D&amp;srcsubj=&amp;type=bkbuy&amp;subject=4913064" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">4.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/30407050/" class="name" target="_blank">有话说</a>
-                                    <div class="author">崔永元</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=jingdong&amp;srcpage=bestseller&amp;price=2860&amp;pos=4&amp;url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIHZRtYFAcXBFIZWR0yEgRRGlwTBxU3EUQDS10iXhBeGh4cDF8QTwcKWUcYB0UHCwIRA1QcXRAFDV4QRwYlQBRAPUJZSVRyXw14MxVEUn40T11AYh4LOxhaFQsSBFYcWxcyFQJSHVwcARU3VR9aEQYiN1Uaa0dsyrHjw%252F6kHsat2s7TgjITN1UfXhELEwVVG1kcBRc3UiuClbXEpcfCxZ%252FXmpBlK2slMiIHZRhrSkZPWmUa%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsWBhMAUx5cCltXWwg%253D&amp;srcsubj=&amp;type=bkbuy&amp;subject=30407050" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">5.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/24749465/" class="name" target="_blank">断舍离</a>
-                                    <div class="author">山下英子</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=jingdong&amp;srcpage=bestseller&amp;price=1820&amp;pos=5&amp;url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEgJRGVwdASJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQIXA1ccUxYdS0IJRmtWARJdExIPcGcQVysdP3Z2TQIqUAZ1Dh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sQCxsDUBpfEAYTAlErXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsVBxYFUhNYCltXWwg%253D&amp;srcsubj=&amp;type=bkbuy&amp;subject=24749465" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">6.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/30475767/" class="name" target="_blank">人生海海</a>
-                                    <div class="author">麦家</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=jingdong&amp;srcpage=bestseller&amp;price=5500&amp;pos=6&amp;url=https%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIHZRtYFAcXBFIZWR0yEgRRGlIWBBQ3EUQDS10iXhBeGlcJDBkNXg9JHUlSSkkFSRwSBFEaUhYEFBgMXgdIMnJQHEQcXAVWZx5tQU4AakUGQztOYmILWStcEAUUAFwYXCUCFgZRH2slAhM3B3WDo7TKouQHj7%252BNx4%252FCK1olAhYDURleEQIQA10YWyUFIt7VrI23kMuZ387TgjIiN2UraxUyETcKXwZIMhM%253D%26t%3DW1dCFFlQCxxKQgFHRE5XDVULR0UVARYGXBhdEx1LQglG&amp;srcsubj=&amp;type=bkbuy&amp;subject=30475767" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">7.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/30312510/" class="name" target="_blank">深度思考</a>
-                                    <div class="author">[美]莫琳·希凯</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=jingdong&amp;srcpage=bestseller&amp;price=4420&amp;pos=7&amp;url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIHZRtYFAcXBFIZWR0yEgRQGF0cBhM3EUQDS10iXhBeGh4cDF8QTwcKWUcYB0UHCwIRAlYdUhEDDV4QRwYla0pGUkZfSFJweAEBG1xZanIMeSZCRB4LOxhaFQsOBl0HWxUTEwZeGlgeBxc3Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sRABUDXR9ZEgcUD1YrXCXbkrCDucnMnJjS3YxrJTIiN2UbaxYyTUMIRg%253D%253D%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsWBxEBXB9aCltXWwg%253D&amp;srcsubj=&amp;type=bkbuy&amp;subject=30312510" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">8.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/30415402/" class="name" target="_blank">断舍离（2019年新版）</a>
-                                    <div class="author">[日]山下英子</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=jingdong&amp;srcpage=bestseller&amp;price=4010&amp;pos=8&amp;url=https%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIHZRtYFAcXBFIZWR0yEgRQEloUBxY3EUQDS10iXhBeGh4cDF8QTwcKWUcYB0UHCwIRAlwaWhAGDV4QRwYlVFB0J0gsaHZyfAFhIUZwEFUdXxp9Yh4LZRxeEgQVDlYcaxUGEwNRK2sVAyJVO8Pto9q3tknP8ZrXmpBlGmsVBhcBVRtdFAIWBFwfaxIyy4fizfmH24yNgJPMJTIiN2UrWyUBIlgRRgYlAw%253D%253D%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsWBxsGVB5fCltXWwg%253D&amp;srcsubj=&amp;type=bkbuy&amp;subject=30415402" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">9.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/30485029/" class="name" target="_blank">鬼谷子</a>
-                                    <div class="author">梦华</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=jingdong&amp;srcpage=bestseller&amp;price=2760&amp;pos=9&amp;url=https%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIHZRtYFAcXBFIZWR0yEgRRG1wUAhc3EUQDS10iXhBeGh4cDF8QTwcKWUcYB0UHCwIRA1UcWhUHDV4QRwYlAXQdMFMNQ0JyXgFyWhJkQWwPSydNch4LZRxeEgQVDlYcaxUGEwNRK2sVAyJVO8Pto9q3tknP8ZrXmpBlGmsVBhYEVRpbEgcRAFcSaxIyy4fizfmH24yNgJPMJTIiN2UrWyUBIlgRRgYlAw%253D%253D%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsWBhIAVBteCltXWwg%253D&amp;srcsubj=&amp;type=bkbuy&amp;subject=30485029" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">10.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/27149602/" class="name" target="_blank">乌合之众</a>
-                                    <div class="author">[法] 古斯塔夫·勒庞</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=jingdong&amp;srcpage=bestseller&amp;price=2120&amp;pos=10&amp;url=http%3A%2F%2Funion-click.jd.com%2Fjdc%3Fe%3D%26p%3DAyIOZR5aEQISA1AYUyUCEQdTHloUAiJDCkMFSjJLQhBaUAscSkIBR0ROVw1VC0dFFQESAVAaWhUdS0IJRmtrBnYPUhJScGBIW0tILk9UCFAjQjlDDh43Uh5cEwUbBFIrWxEDFgNlK1sUMkBpja3tzaejG4Gx1MCKhTdUK1sRAxUGUh5dFgQWDlQrXCXbkrCDucnMnJjS3YxrJTIi%26t%3DW1dCFBBFC1pXUwkEAEAdQFkJBVsWAhQCVBpbCltXWwg%253D&amp;srcsubj=&amp;type=bkbuy&amp;subject=27149602" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
+                            </c:forEach>
                         </ul>
                         <ul class="list list-ranking" style="display: none;">
                             <li class="item">
@@ -1544,7 +1136,6 @@
                   </span>
         </p>
         <p class="abstract">
-
             本书为康·巴乌斯托夫斯基的自传体纪实长篇小说，共分为《遥远的年代》《动荡的青春》《未知世纪的开端》《满怀希望的时期》《投身南方》《漂泊的篇章》六卷。书中既有对往昔岁月的追溯回望、对创作历程的思考探索，亦有对大自然空灵淡远的诗化描绘，作者更是艺术化地书写了与之 同时代的作家 ，诸如布尔加科夫、巴别尔、谢维里亚宁等人的生平轶事。此外还着力刻画了...
         </p>
     </div></div>
