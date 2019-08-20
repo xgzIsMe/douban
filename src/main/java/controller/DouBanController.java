@@ -11,21 +11,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pojo.Book;
+import pojo.User;
 import service.BookService;
+import service.MessageService;
+import service.UserBookService;
+import service.UserService;
 
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
 public class DouBanController {
     @Autowired
     private BookService bookService;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private MessageService messageService;
+    @Autowired
+    private UserBookService userBookService;
     @RequestMapping("/")
     public String show(Model model){
         List<Book> books=bookService.selectAll();
         model.addAttribute("books",books);
         return "douban";
     }
+
     @RequestMapping("/book")
     public String showBook(Model model, @RequestParam("bookid") Integer bookid){
         Book book=bookService.selectByPrimaryKey(bookid);
@@ -55,5 +67,17 @@ public class DouBanController {
         PageInfo page = new PageInfo(books, 3);
         model.addAttribute("page",page);
         return "search";
+    }
+
+    @RequestMapping("/login")
+    private String login(HttpServletRequest request, String username, String password){
+         List<User>users=userService.selectAll();
+         for (User user:users){
+             if (user.getUsername().equals(username)&&user.getPassword().equals(password)){
+                 request.getSession().setAttribute("user",user);
+                 return "redirect:/";
+             }
+         }
+        return "login";
     }
 }

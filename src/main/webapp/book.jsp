@@ -36,12 +36,16 @@
 
 <div id="db-global-nav" class="global-nav">
     <div class="bd">
-
-        <div class="top-nav-info">
-            <a href="#" class="nav-login" rel="nofollow">登录/注册</a>
-        </div>
-
-
+        <c:if test="${user!=null}">
+            <div class="top-nav-info">
+                欢迎你：  <a href="login.jsp" class="nav-login" rel="nofollow">${user.username}</a>
+            </div>
+        </c:if>
+        <c:if test="${user==null}">
+            <div class="top-nav-info">
+                <a href="login.jsp" class="nav-login" rel="nofollow">登录/注册</a>
+            </div>
+        </c:if>
         <div class="top-nav-doubanapp">
             <div id="doubanapp-tip">
             </div>
