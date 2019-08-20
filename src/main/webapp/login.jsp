@@ -51,7 +51,7 @@
     <div class="form-item"><input type="submit" value="登录"></div>
     </form>
     <div class="reg-bar">
-        <a class="reg" href="javascript:">立即注册</a>
+        <a class="reg" href="register.jsp">立即注册</a>
         <a class="forget" href="javascript:">忘记密码</a>
     </div>
 </div>
