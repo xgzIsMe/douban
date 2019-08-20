@@ -188,9 +188,9 @@
                     <!-- 分页条 -->
                     <div class="paginator">
                         <nav aria-label="Page navigation">
-                            <a href="search?pn=1&search_text=的" rel="external nofollow" ><span>首页</span></a>
+                            <a href="search?pn=1&search_text=${search_text}" rel="external nofollow" ><span>首页</span></a>
                             <c:if test="${page.hasPreviousPage }">
-                                <a href="search?pn=${page.pageNum-1}&search_text=的" rel="external nofollow" aria-label="Previous">
+                                <a href="search?pn=${page.pageNum-1}&search_text=${search_text}" rel="external nofollow" aria-label="Previous">
                                     <span aria-hidden="true">«</span>
                                 </a>
                             </c:if>
@@ -199,15 +199,15 @@
                                     <a href="#" rel="external nofollow" >${page_Num}</a>
                                 </c:if>
                                 <c:if test="${page_Num != page.pageNum }">
-                                    <a href="search?pn=${page_Num}&search_text=的" rel="external nofollow" >${page_Num}</a>
+                                    <a href="search?pn=${page_Num}&search_text=${search_text}" rel="external nofollow" >${page_Num}</a>
                                 </c:if>
                             </c:forEach>
                             <c:if test="${page.hasNextPage }">
-                                <a href="search?pn=${page.pageNum+1}&search_text=的" rel="external nofollow" aria-label="Next">
+                                <a href="search?pn=${page.pageNum+1}&search_text=${search_text}" rel="external nofollow" aria-label="Next">
                                     <span aria-hidden="true">»</span>
                                 </a>
                             </c:if>
-                            <a href="search?pn=${page.pages}&search_text=的" rel="external nofollow" >末页</a>
+                            <a href="search?pn=${page.pages}&search_text=${search_text}" rel="external nofollow" >末页</a>
                         </nav>
                     </div>
 

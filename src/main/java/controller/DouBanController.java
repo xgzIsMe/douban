@@ -49,6 +49,7 @@ public class DouBanController {
     }
     @RequestMapping("/search")
     public String showSearch(Model model,String search_text,@RequestParam(value = "pn", defaultValue = "1") Integer pn){
+        model.addAttribute("search_text",search_text);
         PageHelper.startPage(pn, 4);
         List<Book> books=bookService.selectByBookName(search_text);
         PageInfo page = new PageInfo(books, 3);
