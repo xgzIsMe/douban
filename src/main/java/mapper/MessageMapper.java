@@ -1,9 +1,11 @@
 package mapper;
 
 import java.util.List;
-import pojo.Message;
-import pojo.Message;
 
+import org.springframework.stereotype.Repository;
+import pojo.Message;
+import pojo.Message;
+@Repository
 public interface MessageMapper {
 
     int deleteByPrimaryKey(String messageid);

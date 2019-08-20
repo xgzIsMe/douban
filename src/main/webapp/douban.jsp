@@ -56,28 +56,28 @@
         <div class="global-nav-items">
             <ul>
                 <li class="on">
-                    <a href="https://book.douban.com/" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
+                    <a href="douban.jsp" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
                 </li>
                 <li class="">
-                    <a href="https://movie.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">电影</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">电影</a>
                 </li>
                 <li class="">
-                    <a href="https://music.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-music&quot;,&quot;uid&quot;:&quot;0&quot;}">音乐</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-music&quot;,&quot;uid&quot;:&quot;0&quot;}">音乐</a>
                 </li>
                 <li class="">
-                    <a href="https://www.douban.com/location" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-location&quot;,&quot;uid&quot;:&quot;0&quot;}">同城</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-location&quot;,&quot;uid&quot;:&quot;0&quot;}">同城</a>
                 </li>
                 <li class="">
-                    <a href="https://www.douban.com/group" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-group&quot;,&quot;uid&quot;:&quot;0&quot;}">小组</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-group&quot;,&quot;uid&quot;:&quot;0&quot;}">小组</a>
                 </li>
                 <li class="">
-                    <a href="https://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">阅读</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">阅读</a>
                 </li>
                 <li class="">
-                    <a href="https://douban.fm/?from_=shire_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">FM</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">FM</a>
                 </li>
                 <li class="">
-                    <a href="https://time.douban.com/?dt_time_source=douban-web_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
                 </li>
                 <li>
                     <a href="#more" class="bn-more"><span>更多</span></a>
@@ -86,7 +86,7 @@
                             <tbody>
                             <tr>
                                 <td>
-                                    <a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">摄影</a>
+                                    <a href="#" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">摄影</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -218,7 +218,7 @@
                                             </div>
                                             <div class="more-meta">
                                                 <h4 class="title">
-                                                    ${book.booktitle}
+                                                    ${book.bookname}
                                                 </h4>
                                                 <p>
                                               <span class="author">
@@ -352,7 +352,7 @@
                     <div class="bd">
                         <ul class="list-col list-col2 list-summary s" data-dstat-areaid="61" data-dstat-mode="click,expose">
 
-                    <c:forEach items="${books}" var="book" begin="10" end="19">
+                    <c:forEach items="${books}" var="book" begin="10" end="15">
                             <li class="">
                                 <div class="cover">
                                     <a href="#">
@@ -423,52 +423,6 @@
                                 <div class="review-content">
                                     前几天我的初中同学请客，因为他把副业做成了事业。 我的这个同学中专毕业，一直在事业单位工作。他从小喜欢数学，但他的女儿却对数学很头大。于是他就凭着父爱和对数学的兴趣之爱不但让女儿爱上了数学，更把她送...
                                     <a href="https://book.douban.com/review/9574765/">(全文)</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="review ">
-                            <div class="review-hd">
-                                <a href="https://book.douban.com/review/9574074/">
-                                    <img src="static/img/s29522327.jpg" alt="一年读300本书？这是我见过的最高效的方法">
-                                </a>
-                            </div>
-                            <div class="review-bd">
-                                <h3><a href="https://book.douban.com/review/9574074/">一年读300本书？这是我见过的最高效的方法</a></h3>
-                                <div class="review-meta">
-                                    <a href="https://www.douban.com/people/163438840/">糖果读书会</a> 评论
-                                    <a href="https://book.douban.com/review/9574074/">《实用性阅读指南》</a>
-
-                                    <span class="allstar50"></span>
-                                </div>
-                                <div class="review-content">
-                                    时常会看到有网友问“为什么读了这么多书，我们却依旧过不好这一生？” 初看这个问题，我们多数人下意识都会把关注点都放在读的书的数量上，认为自己付出了很多努力，却没有得到想要的结果。很少人会直接去关注对...
-                                    <a href="https://book.douban.com/review/9574074/">(全文)</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="review ">
-                            <div class="review-hd">
-                                <a href="https://book.douban.com/review/9575683/">
-                                    <img src="static/img/s29746097.jpg" alt="顺不是孝，自我不意味背叛">
-                                </a>
-                            </div>
-                            <div class="review-bd">
-                                <h3><a href="https://book.douban.com/review/9575683/">顺不是孝，自我不意味背叛</a></h3>
-                                <div class="review-meta">
-                                    <a href="https://www.douban.com/people/2338954/">夏彤</a> 评论
-                                    <a href="https://book.douban.com/review/9575683/">《原生家庭》</a>
-
-                                    <span class="allstar40"></span>
-                                </div>
-                                <div class="review-content">
-                                    儿子马上要上小学了，省里教育局规定义务教育阶段每个孩子都必须熟背《弟子规》。我心中一惊，瞬时感到不知所措。因为我内心中对于《弟子规》中关于“孝”这个没有完整命题的结论是抗拒的。天下父母千千万，自然...
-                                    <a href="https://book.douban.com/review/9575683/">(全文)</a>
                                 </div>
                             </div>
                         </div>

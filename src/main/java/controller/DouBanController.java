@@ -75,7 +75,7 @@ public class DouBanController {
          for (User user:users){
              if (user.getUsername().equals(username)&&user.getPassword().equals(password)){
                  request.getSession().setAttribute("user",user);
-                 if (user.getUserstate()==1){
+                 if (user.getUserstate()==0){
                      return null;
                  }
                  return "redirect:/";
@@ -83,4 +83,6 @@ public class DouBanController {
          }
         return "login";
     }
+
+
 }

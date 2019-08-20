@@ -65,37 +65,37 @@
         <div class="global-nav-items">
             <ul>
                 <li class="on">
-                    <a href="https://book.douban.com/" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
+                    <a href="douban.jsp" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
                 </li>
                 <li class="">
-                    <a href="https://movie.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">电影</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">电影</a>
                 </li>
                 <li class="">
-                    <a href="https://music.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-music&quot;,&quot;uid&quot;:&quot;0&quot;}">音乐</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-music&quot;,&quot;uid&quot;:&quot;0&quot;}">音乐</a>
                 </li>
                 <li class="">
-                    <a href="https://www.douban.com/location" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-location&quot;,&quot;uid&quot;:&quot;0&quot;}">同城</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-location&quot;,&quot;uid&quot;:&quot;0&quot;}">同城</a>
                 </li>
                 <li class="">
-                    <a href="https://www.douban.com/group" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-group&quot;,&quot;uid&quot;:&quot;0&quot;}">小组</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-group&quot;,&quot;uid&quot;:&quot;0&quot;}">小组</a>
                 </li>
                 <li class="">
-                    <a href="https://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">阅读</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">阅读</a>
                 </li>
                 <li class="">
-                    <a href="https://douban.fm/?from_=shire_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">FM</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">FM</a>
                 </li>
                 <li class="">
-                    <a href="https://time.douban.com/?dt_time_source=douban-web_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
+                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
                 </li>
                 <li>
-                    <a href="https://book.douban.com/subject/33950352/?icn=index-latestbook-subject#more" class="bn-more"><span>更多</span></a>
+                    <a href="douban.jsp" class="bn-more"><span>更多</span></a>
                     <div class="more-items">
                         <table cellpadding="0" cellspacing="0">
                             <tbody>
                             <tr>
                                 <td>
-                                    <a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">摄影</a>
+                                    <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">摄影</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -386,29 +386,22 @@
 
                     <link rel="stylesheet" href="static/css/book/comment.css">
                     <div class="mod-hd">
-
-
-                        <a class="redbutt j a_show_login rr" href="https://www.douban.com/register?reason=review" rel="nofollow">
+                        <a href="#" rel="nofollow">
                             <span> 我来说两句 </span>
                         </a>
 
                         <h2>
                             <span class="">短评</span>
-                            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
-                            <span class="pl">&nbsp;(
-          <a href="https://book.douban.com/subject/33950352/comments/">全部 20 条</a>
-        ) </span>
-
                         </h2>
                     </div>
                     <div class="nav-tab">
 
                         <div class="tabs-wrapper  line">
-                            <a class="short-comment-tabs on-tab" href="https://book.douban.com/subject/33950352/hot" data-tab="hot">热门</a>
+                            <a class="short-comment-tabs on-tab" href="#" data-tab="hot">热门</a>
                             <span>/</span>
-                            <a class="short-comment-tabs " href="https://book.douban.com/subject/33950352/new" data-tab="new">最新</a>
+                            <a class="short-comment-tabs " href="#" data-tab="new">最新</a>
                             <span>/</span>
-                            <a class="j a_show_login " href="https://book.douban.com/subject/33950352/follows" data-tab="follows">好友</a>
+                            <a class="j a_show_login " href="#" data-tab="follows">好友</a>
                         </div>
 
                     </div>
@@ -454,27 +447,6 @@
                                         <p class="comment-content">
 
                                             <span class="short">就买来准备以后挂墙上吧。。。</span>
-                                        </p>
-                                    </div>
-                                </li>
-
-
-                                <li class="comment-item" data-cid="1876169557">
-                                    <div class="comment">
-                                        <h3>
-                <span class="comment-vote">
-                    <span id="c-1876169557" class="vote-count">1</span>
-                        <a href="javascript:;" id="btn-1876169557" class="j a_show_login" data-cid="1876169557">有用</a>
-                </span>
-                                            <span class="comment-info">
-                    <a href="https://www.douban.com/people/54910425/">晓来霜林</a>
-                        <span class="user-stars allstar40 rating" title="推荐"></span>
-                    <span>2019-07-26</span>
-                </span>
-                                        </h3>
-                                        <p class="comment-content">
-
-                                            <span class="short">是我喜欢的方式！</span>
                                         </p>
                                     </div>
                                 </li>

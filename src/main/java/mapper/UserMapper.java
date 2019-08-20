@@ -1,8 +1,10 @@
 package mapper;
 
 import java.util.List;
-import pojo.User;
 
+import org.springframework.stereotype.Repository;
+import pojo.User;
+@Repository
 public interface UserMapper {
 
     int deleteByPrimaryKey(String userid);

@@ -50,7 +50,7 @@
         <div class="global-nav-items">
             <ul>
                 <li class="on">
-                    <a href="#" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
+                    <a href="douban.jsp" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
                 </li>
                 <li class="">
                     <a href="#" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">电影</a>
@@ -65,16 +65,16 @@
                     <a href="#" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-group&quot;,&quot;uid&quot;:&quot;0&quot;}">小组</a>
                 </li>
                 <li class="">
-                    <a href="https://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">阅读</a>
+                    <a href="#" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">阅读</a>
                 </li>
                 <li class="">
-                    <a href="https://douban.fm/?from_=shire_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">FM</a>
+                    <a href="#" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">FM</a>
                 </li>
                 <li class="">
-                    <a href="https://time.douban.com/?dt_time_source=douban-web_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
+                    <a href="#" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
                 </li>
                 <li>
-                    <a href="https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4#more" class="bn-more"><span>更多</span></a>
+                    <a href="#" class="bn-more"><span>更多</span></a>
                     <div class="more-items">
                         <table cellpadding="0" cellspacing="0">
                             <tbody>
@@ -99,7 +99,7 @@
             <div>
             </div>
             <div class="nav-search">
-                <form action="https://book.douban.com/subject_search" method="get">
+                <form action="${pageContext.request.contextPath}/search" method="get">
                     <fieldset>
                         <legend>搜索：</legend>
                         <label for="inp-query">

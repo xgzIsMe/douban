@@ -51,8 +51,8 @@
     <div class="form-item"><input type="submit" value="登录"></div>
     </form>
     <div class="reg-bar">
-        <a class="reg" href="register.jsp">立即注册</a>
-        <a class="forget" href="javascript:">忘记密码</a>
+        <a class="reg" href="#">立即注册</a>
+        <a class="forget" href="douban.jsp">返回首页</a>
     </div>
 </div>
 <script src="static/js/jquery-3.4.1.min.js"></script>
