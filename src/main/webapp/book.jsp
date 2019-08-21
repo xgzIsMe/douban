@@ -262,7 +262,6 @@
                                 <span class="rating_per">2.4%</span>
                                 <br>
 
-
                                 <span class="stars1 starstop" title="很差">
     1星
 </span>
@@ -386,10 +385,6 @@
 
                     <link rel="stylesheet" href="static/css/book/comment.css">
                     <div class="mod-hd">
-                        <a href="#" rel="nofollow">
-                            <span> 我来说两句 </span>
-                        </a>
-
                         <h2>
                             <span class="">短评</span>
                         </h2>
@@ -451,75 +446,6 @@
                                     </div>
                                 </li>
 
-
-                            </ul>
-                        </div>
-
-                        <div class="comment-list new noshow">
-                            <ul>
-
-                                <li class="comment-item" data-cid="1909409802">
-                                    <div class="comment">
-                                        <h3>
-                <span class="comment-vote">
-                    <span id="c-1909409802" class="vote-count">0</span>
-                        <a href="javascript:;" id="btn-1909409802" class="j a_show_login" data-cid="1909409802">有用</a>
-                </span>
-                                            <span class="comment-info">
-                    <a href="https://www.douban.com/people/jennyqueen/">珍妮的肖像</a>
-                        <span class="user-stars allstar50 rating" title="力荐"></span>
-                    <span>2019-08-15</span>
-                </span>
-                                        </h3>
-                                        <p class="comment-content">
-
-                                            <span class="short">到手是一个大信封，打开是一大张四千年汉字汉语文学流变的超浓缩思维导图，带一本说明，内有写作背景及作者黎锦辉生平。第一时间去订了框裱将起来~</span>
-                                        </p>
-                                    </div>
-                                </li>
-
-
-                                <li class="comment-item" data-cid="1897342097">
-                                    <div class="comment">
-                                        <h3>
-                <span class="comment-vote">
-                    <span id="c-1897342097" class="vote-count">3</span>
-                        <a href="javascript:;" id="btn-1897342097" class="j a_show_login" data-cid="1897342097">有用</a>
-                </span>
-                                            <span class="comment-info">
-                    <a href="https://www.douban.com/people/qin-book/">琴斋书话</a>
-                    <span>2019-08-09</span>
-                </span>
-                                        </h3>
-                                        <p class="comment-content">
-
-                                            <span class="short">●语言的意义其实远不在它本身的意义、隐喻、象征，更在于它由诞生至今所包裹的文化流变。作为汉语的使用者，我们是幸运的，这是世界上绝无仅有的从数千年前发展至今，生机持续绵延的同时具有表音表意能力的语言了。●如何最好地将汉语自四千多年前发展至今的所有变化展示于读者眼前呢？近一百年前，现代汉语奠基人、教育家黎锦熙先生创编了这张图——《国语四千年来变化潮流图》。在这张图的绘制过程中，赵元任、钱玄同、刘半农等...</span>
-                                            <span class="hide-item full">●语言的意义其实远不在它本身的意义、隐喻、象征，更在于它由诞生至今所包裹的文化流变。作为汉语的使用者，我们是幸运的，这是世界上绝无仅有的从数千年前发展至今，生机持续绵延的同时具有表音表意能力的语言了。●如何最好地将汉语自四千多年前发展至今的所有变化展示于读者眼前呢？近一百年前，现代汉语奠基人、教育家黎锦熙先生创编了这张图——《国语四千年来变化潮流图》。在这张图的绘制过程中，赵元任、钱玄同、刘半农等我们耳熟能详的语言学家也参与其中的修订。在1926年，它作为中国教育展品之一，送往在美国费城举办的世界博览会，荣获世界的惊叹。●这张图展示了汉语在汉字、音韵、训诂等方面的发展历程，总结了各个历史时期最具代表性的主要文学作家、作品和文体风格。采用信息图式的整理方式，免去了长篇大论的说教，化繁.....</span>
-                                            <span class="expand">(<a href="javascript:;">展开</a>)</span>
-                                        </p>
-                                    </div>
-                                </li>
-
-
-                                <li class="comment-item" data-cid="1893511741">
-                                    <div class="comment">
-                                        <h3>
-                <span class="comment-vote">
-                    <span id="c-1893511741" class="vote-count">2</span>
-                        <a href="javascript:;" id="btn-1893511741" class="j a_show_login" data-cid="1893511741">有用</a>
-                </span>
-                                            <span class="comment-info">
-                    <a href="https://www.douban.com/people/46157850/">墨芝</a>
-                        <span class="user-stars allstar40 rating" title="推荐"></span>
-                    <span>2019-08-10</span>
-                </span>
-                                        </h3>
-                                        <p class="comment-content">
-
-                                            <span class="short">对书法的帮助不大，但对了解汉语源流十分有益，细读之后再写书评</span>
-                                        </p>
-                                    </div>
-                                </li>
 
                             </ul>
                         </div>

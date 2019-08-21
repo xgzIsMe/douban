@@ -84,5 +84,13 @@ public class DouBanController {
         return "login";
     }
 
-
+    @RequestMapping("/register")
+    public String showRegister(String username, String password)
+    {
+        User user=new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        userService.insert(user);
+        return "login";
+    }
 }

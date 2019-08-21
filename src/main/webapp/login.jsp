@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>登录</title>
+    <link rel="stylesheet" href="static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="static/js/jquery-3.4.1.min.js"></script>
+    <script src="static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <style>
         * { margin: 0; padding: 0; }
         html { height: 100%; }
@@ -51,11 +54,46 @@
     <div class="form-item"><input type="submit" value="登录"></div>
     </form>
     <div class="reg-bar">
-        <a class="reg" href="#">立即注册</a>
+        <a data-toggle="modal" data-target="#register" href=""><span class="glyphicon glyphicon-user"></span> 注册</a>
         <a class="forget" href="douban.jsp">返回首页</a>
     </div>
 </div>
-<script src="static/js/jquery-3.4.1.min.js"></script>
+<!-- 注册窗口 -->
+<div id="register" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-title">
+                <h1 class="text-center">注册</h1>
+            </div>
+            <div class="modal-body">
+                <form class="form-group" action="${pageContext.request.contextPath}/register">
+                    <div class="form-group">
+                        <label for="">用户名</label>
+                        <input class="form-control" type="text" name="username" placeholder="6-15位字母或数字">
+                    </div>
+                    <div class="form-group">
+                        <label for="">密码</label>
+                        <input class="form-control" type="password" name="password" placeholder="至少6位字母或数字">
+                    </div>
+                    <div class="form-group">
+                        <label for="">再次输入密码</label>
+                        <input class="form-control" type="password" placeholder="至少6位字母或数字">
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-primary" type="submit">注册</button>
+                        <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                    </div>
+                    <a href="login.jsp" data-toggle="modal" data-dismiss="modal">已有账号？点我登录</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <div style="text-align:center;">
 </div>
 </body>

@@ -352,7 +352,7 @@
                     <div class="bd">
                         <ul class="list-col list-col2 list-summary s" data-dstat-areaid="61" data-dstat-mode="click,expose">
 
-                    <c:forEach items="${books}" var="book" begin="10" end="15">
+                    <c:forEach items="${books}" var="book" begin="10" end="13">
                             <li class="">
                                 <div class="cover">
                                     <a href="#">
