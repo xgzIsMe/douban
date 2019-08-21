@@ -339,9 +339,9 @@
                     <div class="nav-tab">
 
                         <div class="tabs-wrapper  line">
-                            <a class="short-comment-tabs on-tab" href="#" data-tab="hot">热门</a>
-                            <span>/</span>
                             <a class="short-comment-tabs " href="#" data-tab="new">最新</a>
+                            <span>/</span>
+                            <a class="short-comment-tabs on-tab" href="#" data-tab="hot">热门</a>
                             <span>/</span>
                             <a class="j a_show_login " href="#" data-tab="follows">好友</a>
                         </div>
@@ -352,7 +352,7 @@
 
                         <div id="comments" class="comment-list hot show">
                             <ul>
-
+                    <span id="sss"></span>
                                 <li class="comment-item" data-cid="1818515090">
                                     <div class="comment">
                                         <h3>
@@ -537,6 +537,24 @@
                 if (data!=""){
                     alert(data)
                 }
+                document.getElementById("sss").innerHTML="<li class=\"comment-item\" data-cid=\"1818515090\">\n" +
+                    "                                    <div class=\"comment\">\n" +
+                    "                                        <h3>\n" +
+                    "                <span class=\"comment-vote\">\n" +
+                    "                    <span id=\"c-1818515090\" class=\"vote-count\">1</span>\n" +
+                    "                        <a href=\"javascript:;\" id=\"btn-1818515090\" class=\"j a_show_login\" data-cid=\"1818515090\">有用</a>\n" +
+                    "                </span>\n" +
+                    "                                            <span class=\"comment-info\">\n" +
+                    "                    <a href=\"https://www.douban.com/people/nookey/\">猜猜</a>\n" +
+                    "                    <span>2019-08-13</span>\n" +
+                    "                </span>\n" +
+                    "                                        </h3>\n" +
+                    "                                        <p class=\"comment-content\">\n" +
+                    "\n" +
+                    "                                            <span class=\"short\">感谢后浪。太喜欢了。</span>\n" +
+                    "                                        </p>\n" +
+                    "                                    </div>\n" +
+                    "                                </li>";
             }
         })
     });
