@@ -55,7 +55,7 @@
     </form>
     <div class="reg-bar">
         <a data-toggle="modal" data-target="#register" href=""><span class="glyphicon glyphicon-user"></span> 注册</a>
-        <a class="forget" href="douban.jsp">返回首页</a>
+        <a class="forget" href="index">返回首页</a>
     </div>
 </div>
 <!-- 注册窗口 -->

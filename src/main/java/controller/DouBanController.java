@@ -19,6 +19,8 @@ import service.UserService;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -102,8 +104,8 @@ public class DouBanController {
 
     @RequestMapping("/comment")
     @ResponseBody
-    public String showComment(@RequestParam String txt,@RequestParam String xing){
+    public String showComment(HttpServletRequest request, @RequestParam String txt, @RequestParam String xing) throws IOException {
         System.out.println(txt+xing);
-        return "成功";
+        return null;
     }
 }

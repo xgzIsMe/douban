@@ -9,6 +9,14 @@
   </context:component-scan>
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
+    <!--拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/comment"/>
+            <bean class="interceptor.UserInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix" value="/"/>
     <property name="suffix" value=".jsp"/>

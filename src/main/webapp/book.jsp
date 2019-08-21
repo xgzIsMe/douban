@@ -185,17 +185,13 @@
             <a class="" href="#">${book.bookauthor}</a>
     </span><br>
 
-
                                 <span class="pl">出版社:</span> ${book.bookpublic}<br>
-
 
 
                                 <span class="pl">出版年:</span> ${book.bookyear}<br>
 
 
-
                                 <span class="pl">定价:</span> ${book.price}元<br>
-
 
 
                                 <span class="pl">ISBN:</span>${book.isbn}<br>
@@ -531,13 +527,16 @@
     $("span.submit").click(function () {
         var txt = $(".message").html(); //获取输入框内容
         var xing=document.getElementById("rating_simple2").value;
+        var time=new Date();
         $.ajax({
             type:"post",
             url:"comment",
             data:{"txt":txt,"xing":xing},
             datatype:"json",
-            success: function(data){
-                alert(data)
+            success:function (data) {
+                if (data!=""){
+                    alert(data)
+                }
             }
         })
     });
