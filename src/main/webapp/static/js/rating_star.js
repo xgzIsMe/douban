@@ -5,7 +5,6 @@
         var b=p&&p.rating_star_length?p.rating_star_length:"5";
         var c=p&&p.rating_function_name?p.rating_function_name:"";
         var e=p&&p.rating_initial_value?p.rating_initial_value:"0";
-        var d=p&&p.directory?p.directory:"images";
         var f=e;
         var g=a(this);
         b=parseInt(b);
@@ -37,7 +36,7 @@ function init(){
     var a=$("<ul>");
     a.addClass("webwidget_rating_sex");
     for(var i=1;i<=b;i++){
-        a.append('<li style="background-image:url(/static/img/web_widget_star.gif)"><span>'+i+'</span></li>')
+        a.append('<li style="background-image:url(static/img/web_widget_star.gif)"><span>'+i+'</span></li>')
         }
         a.insertAfter(g);
     if(e!=""){

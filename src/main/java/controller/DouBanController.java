@@ -99,4 +99,11 @@ public class DouBanController {
         userService.insert(user);
         return "login";
     }
+
+    @RequestMapping("/comment")
+    @ResponseBody
+    public String showComment(@RequestParam String txt,@RequestParam String xing){
+        System.out.println(txt+xing);
+        return "成功";
+    }
 }

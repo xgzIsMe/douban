@@ -14,8 +14,8 @@
 
     <link rel="stylesheet" href="static/css/pinglun/pinglun.css" />
     <script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
-    <link href="static/css/pinglun/rating_star.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="static/js/rating_star.js"></script>
+    <link href="static/css/pinglun/rating_star.css" rel="stylesheet" type="text/css">
 
 
     <link type="text/css" rel="stylesheet" href="static/css/book/dialog.css">
@@ -334,58 +334,6 @@
 
                     <div id="author_subject" class="author-wrapper"><div data-reactroot="" class="author-subject"></div></div>
 
-
-                    <div id="db-tags-section" class="blank20">
-
-                        <h2>
-                            <span class="">常用的标签(共41个)</span>
-                            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
-
-                        </h2>
-
-                        <div class="indent">    <span class="">
-        <a class="  tag" href="https://book.douban.com/tag/%E8%AF%AD%E8%A8%80%E5%AD%A6">语言学</a> &nbsp;    </span>
-                            <span class="">
-        <a class="  tag" href="https://book.douban.com/tag/%E6%B1%89%E8%AF%AD%E5%8F%B2">汉语史</a> &nbsp;    </span>
-                            <span class="">
-        <a class="  tag" href="https://book.douban.com/tag/%E9%BB%8E%E9%94%A6%E7%86%99">${book.bookauthor}</a> &nbsp;    </span>
-                            <span class="">
-        <a class="  tag" href="https://book.douban.com/tag/%E6%96%87%E5%8C%96">文化</a> &nbsp;    </span>
-                            <span class="">
-        <a class="  tag" href="https://book.douban.com/tag/%E6%B1%89%E8%AF%AD%E8%A8%80%E6%96%87%E5%AD%97%E5%AD%A6">汉语言文字学</a> &nbsp;    </span>
-                            <span class="">
-        <a class="  tag" href="https://book.douban.com/tag/%E5%90%8E%E6%B5%AA">后浪</a> &nbsp;    </span>
-                            <span class="">
-        <a class="  tag" href="https://book.douban.com/tag/%E5%8E%86%E5%8F%B2">历史</a> &nbsp;    </span>
-                            <span class="">
-        <a class="  tag" href="https://book.douban.com/tag/%E8%AF%AD%E8%A8%80%E9%97%AE%E9%A2%98">语言问题</a> &nbsp;</span>
-                        </div>
-                    </div>
-
-                    <div id="db-rec-section" class="block5 subject_show knnlike">
-                        <h2>
-                            <span class="">喜欢读《${book.bookname}》的人也喜欢</span>
-                            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
-                        </h2>
-
-
-                        <div class="content clearfix">
-                            <c:forEach items="${books}" var="b" begin="5" end="9">
-                            <dl class="">
-                                <dt>
-                                    <a href="/book" ><img class="m_sub_img" src="static/${b.bookimage}"></a>
-                                </dt>
-                                <dd>
-                                    <a href="#"  class="">
-                                        ${b.bookname}
-                                    </a>
-                                </dd>
-                            </dl>
-                            </c:forEach>
-                            <dl class="clear"></dl>
-                        </div>
-                    </div>
-
                     <link rel="stylesheet" href="static/css/book/comment.css">
                     <div class="mod-hd">
                         <h2>
@@ -550,7 +498,7 @@
 <!--qq end-->
 <!--msgCon begin-->
 <div class="msgCon"></div>
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
     $(function() {
         $("#rating_simple2").webwidget_rating_sex({
             rating_star_length: '5',
@@ -582,7 +530,16 @@
     //点击发表按扭，发表内容
     $("span.submit").click(function () {
         var txt = $(".message").html(); //获取输入框内容
-        alert(txt);
+        var xing=document.getElementById("rating_simple2").value;
+        $.ajax({
+            type:"post",
+            url:"comment",
+            data:{"txt":txt,"xing":xing},
+            datatype:"json",
+            success: function(data){
+                alert(data)
+            }
+        })
     });
 </script>
 <!--评论模块结束-->
