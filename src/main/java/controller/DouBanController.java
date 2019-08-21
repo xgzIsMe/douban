@@ -37,6 +37,12 @@ public class DouBanController {
         model.addAttribute("books",books);
         return "douban";
     }
+    @RequestMapping("/index")
+    public String showIndex(Model model){
+        List<Book> books=bookService.selectAll();
+        model.addAttribute("books",books);
+        return "douban";
+    }
 
     @RequestMapping("/book")
     public String showBook(Model model, @RequestParam("bookid") Integer bookid){

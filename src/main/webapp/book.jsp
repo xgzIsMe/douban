@@ -11,10 +11,14 @@
 
     <title>${book.bookname}</title>
 
+
+    <link rel="stylesheet" href="static/css/pinglun/pinglun.css" />
+    <script type="text/javascript" src="static/js/jquery-3.4.1.min.js"></script>
+    <link href="static/css/pinglun/rating_star.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="static/js/rating_star.js"></script>
+
+
     <link type="text/css" rel="stylesheet" href="static/css/book/dialog.css">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
-    <script>var _head_start = new Date();</script>
     <link href="static/css/book/master.css" rel="stylesheet" type="text/css">
     <link href="static/css/book/init.css" rel="stylesheet">
     <style type="text/css"></style>
@@ -65,7 +69,7 @@
         <div class="global-nav-items">
             <ul>
                 <li class="on">
-                    <a href="douban.jsp" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
+                    <a href="index" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
                 </li>
                 <li class="">
                     <a href="douban.jsp" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">电影</a>
@@ -154,12 +158,12 @@
 <div id="wrapper">
     <div id="dale_book_subject_top_icon" ad-status="loaded"></div>
     <h1>
-        <span property="v:itemreviewed">${book.bookname}</span>
+        <span property="v:itemreviewed" style="margin-left: 200px">${book.bookname}</span>
         <div class="clear"></div>
     </h1>
     <div id="content">
         <div class="grid-16-8 clearfix">
-            <div class="article">
+            <div class="article" style="margin-left: 200px">
                 <div class="indent">
                     <div class="subjectwrap clearfix">
 
@@ -362,7 +366,6 @@
                         <h2>
                             <span class="">喜欢读《${book.bookname}》的人也喜欢</span>
                             &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
-
                         </h2>
 
 
@@ -456,6 +459,131 @@
             </div>
         </div>
     </div>
-
     <!-- brand34-docker-->
-    <div id="search_suggest" style="display: none; top: 78px; left: 162.4px;"><ul></ul></div></div></body></html>
+    <div id="search_suggest" style="display: none; top: 78px; left: 162.4px;"><ul></ul></div></div>
+<!----------------评论模块--------------->
+<div id="qq">
+    <p style="font-size: larger;">对于该书的评价：</p>
+    <input name="my_input" value="5" id="rating_simple2" type="hidden">
+    <div class="message" contentEditable='true'></div>
+    <div class="But">
+        <img src="static/img/images/bba_thumb.gif" class='bq' />
+        <span class='submit'>发表</span>
+        <!--face begin-->
+        <div class="face">
+            <ul>
+                <li><img src="static/img/images/smilea_thumb.gif" title="呵呵]"></li>
+                <li><img src="static/img/images/tootha_thumb.gif" title="嘻嘻]"></li>
+                <li><img src="static/img/images/laugh.gif" title="[哈哈]"></li>
+                <li><img src="static/img/images/tza_thumb.gif" title="[可爱]"></li>
+                <li><img src="static/img/images/kl_thumb.gif" title="[可怜]"></li>
+                <li><img src="static/img/images/kbsa_thumb.gif" title="[挖鼻屎]"></li>
+                <li><img src="static/img/images/cj_thumb.gif" title="[吃惊]"></li>
+                <li><img src="static/img/images/shamea_thumb.gif" title="[害羞]"></li>
+                <li><img src="static/img/images/zy_thumb.gif" title="[挤眼]"></li>
+                <li><img src="static/img/images/bz_thumb.gif" title="[闭嘴]"></li>
+                <li><img src="static/img/images/bs2_thumb.gif" title="[鄙视]"></li>
+                <li><img src="static/img/images/lovea_thumb.gif" title="[爱你]"></li>
+                <li><img src="static/img/images/sada_thumb.gif" title="[泪]"></li>
+                <li><img src="static/img/images/heia_thumb.gif" title="[偷笑]"></li>
+                <li><img src="static/img/images/qq_thumb.gif" title="[亲亲]"></li>
+                <li><img src="static/img/images/sb_thumb.gif" title="[生病]"></li>
+                <li><img src="static/img/images/mb_thumb.gif" title="[太开心]"></li>
+                <li><img src="static/img/images/ldln_thumb.gif" title="[懒得理你]"></li>
+                <li><img src="static/img/images/yhh_thumb.gif" title="[右哼哼]"></li>
+                <li><img src="static/img/images/zhh_thumb.gif" title="[左哼哼]"></li>
+                <li><img src="static/img/images/x_thumb.gif" title="[嘘]"></li>
+                <li><img src="static/img/images/cry.gif" title="[衰]"></li>
+                <li><img src="static/img/images/wq_thumb.gif" title="[委屈]"></li>
+                <li><img src="static/img/images/t_thumb.gif" title="[吐]"></li>
+                <li><img src="static/img/images/k_thumb.gif" title="[打哈气]"></li>
+                <li><img src="static/img/images/bba_thumb.gif" title="[抱抱]"></li>
+                <li><img src="static/img/images/angrya_thumb.gif" title="[怒]"></li>
+                <li><img src="static/img/images/yw_thumb.gif" title="[疑问]"></li>
+                <li><img src="static/img/images/cza_thumb.gif" title="[馋嘴]"></li>
+                <li><img src="static/img/images/88_thumb.gif" title="[拜拜]"></li>
+                <li><img src="static/img/images/sk_thumb.gif" title="[思考]"></li>
+                <li><img src="static/img/images/sweata_thumb.gif" title="[汗]"></li>
+                <li><img src="static/img/images/sleepya_thumb.gif" title="[困]"></li>
+                <li><img src="static/img/images/sleepa_thumb.gif" title="[睡觉]"></li>
+                <li><img src="static/img/images/money_thumb.gif" title="[钱]"></li>
+                <li><img src="static/img/images/sw_thumb.gif" title="[失望]"></li>
+                <li><img src="static/img/images/cool_thumb.gif" title="[酷]"></li>
+                <li><img src="static/img/images/hsa_thumb.gif" title="[花心]"></li>
+                <li><img src="static/img/images/hatea_thumb.gif" title="[哼]"></li>
+                <li><img src="static/img/images/gza_thumb.gif" title="[鼓掌]"></li>
+                <li><img src="static/img/images/dizzya_thumb.gif" title="[晕]"></li>
+                <li><img src="static/img/images/bs_thumb.gif" title="[悲伤]"></li>
+                <li><img src="static/img/images/crazya_thumb.gif" title="[抓狂]"></li>
+                <li><img src="static/img/images/h_thumb.gif" title="[黑线]"></li>
+                <li><img src="static/img/images/yx_thumb.gif" title="[阴险]"></li>
+                <li><img src="static/img/images/nm_thumb.gif" title="[怒骂]"></li>
+                <li><img src="static/img/images/hearta_thumb.gif" title="[心]"></li>
+                <li><img src="static/img/images/unheart.gif" title="[伤心]"></li>
+                <li><img src="static/img/images/pig.gif" title="[猪头]"></li>
+                <li><img src="static/img/images/ok_thumb.gif" title="[ok]"></li>
+                <li><img src="static/img/images/ye_thumb.gif" title="[耶]"></li>
+                <li><img src="static/img/images/good_thumb.gif" title="[good]"></li>
+                <li><img src="static/img/images/no_thumb.gif" title="[不要]"></li>
+                <li><img src="static/img/images/z2_thumb.gif" title="[赞]"></li>
+                <li><img src="static/img/images/come_thumb.gif" title="[来]"></li>
+                <li><img src="static/img/images/sad_thumb.gif" title="[弱]"></li>
+                <li><img src="static/img/images/lazu_thumb.gif" title="[蜡烛]"></li>
+                <li><img src="static/img/images/clock_thumb.gif" title="[钟]"></li>
+                <li><img src="static/img/images/cake.gif" title="[蛋糕]"></li>
+                <li><img src="static/img/images/m_thumb.gif" title="[话筒]"></li>
+                <li><img src="static/img/images/weijin_thumb.gif" title="[围脖]"></li>
+                <li><img src="static/img/images/lxhzhuanfa_thumb.gif" title="[转发]"></li>
+                <li><img src="static/img/images/lxhluguo_thumb.gif" title="[路过这儿]"></li>
+                <li><img src="static/img/images/bofubianlian_thumb.gif" title="[bofu变脸]"></li>
+                <li><img src="static/img/images/gbzkun_thumb.gif" title="[gbz困]"></li>
+                <li><img src="static/img/images/boboshengmenqi_thumb.gif" title="[生闷气]"></li>
+                <li><img src="static/img/images/chn_buyaoya_thumb.gif" title="[不要啊]"></li>
+                <li><img src="static/img/images/daxiongleibenxiong_thumb.gif" title="[dx泪奔]"></li>
+                <li><img src="static/img/images/cat_yunqizhong_thumb.gif" title="[运气中]"></li>
+                <li><img src="static/img/images/youqian_thumb.gif" title="[有钱]"></li>
+            </ul>
+        </div>
+        <!--face end-->
+    </div>
+</div>
+<!--qq end-->
+<!--msgCon begin-->
+<div class="msgCon"></div>
+<script language="javascript" type="text/javascript">
+    $(function() {
+        $("#rating_simple2").webwidget_rating_sex({
+            rating_star_length: '5',
+            rating_initial_value: '',
+            rating_function_name: '',//this is function name for click
+            directory: 'images/'
+        });
+    });
+</script>
+<script type="text/javascript">
+    //从缓存中获取数据并渲染
+    //点击小图片，显示表情
+    $(".bq").click(function (e) {
+        $(".face").slideDown(); //慢慢向下展开
+        e.stopPropagation(); //阻止冒泡事件
+    });
+
+    //在桌面任意地方点击，关闭表情框
+    $(document).click(function () {
+        $(".face").slideUp(); //慢慢向上收
+    });
+
+    //点击小图标时，添加功能
+    $(".face ul li").click(function () {
+        var simg = $(this).find("img").clone();
+        $(".message").append(simg); //将表情添加到输入框
+    });
+
+    //点击发表按扭，发表内容
+    $("span.submit").click(function () {
+        var txt = $(".message").html(); //获取输入框内容
+        alert(txt);
+    });
+</script>
+<!--评论模块结束-->
+</body></html>

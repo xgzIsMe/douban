@@ -1,0 +1,19 @@
+.webwidget_rating_sex{
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+.webwidget_rating_sex li{
+    line-height: 0px;
+    width: 28px;
+    height: 28px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 2px;
+    list-style: none;
+    float: left;
+    cursor: pointer;
+}
+.webwidget_rating_sex li span{
+    display: none;
+}
