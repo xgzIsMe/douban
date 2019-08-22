@@ -11,16 +11,12 @@ public class UserInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         User user= (User) request.getSession().getAttribute("user");
-        System.out.println(user);
-        if (request.getRequestURL().indexOf("/login")>0){
-            return true;
-        }
-        if (user!=null){
-            return true;
-        }
-        request.getRequestDispatcher("fail.jsp").forward(request,response);
-        return false;
-    }
+         if(user==null ){
+          response.getWriter().print("false");
+           return false;
+       }
+        return  true;
+  }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {

@@ -339,9 +339,9 @@
                     <div class="nav-tab">
 
                         <div class="tabs-wrapper  line">
-                            <a class="short-comment-tabs " href="#" data-tab="new">最新</a>
+                            <a class="short-comment-tabs  on-tab" href="#" data-tab="new">最新</a>
                             <span>/</span>
-                            <a class="short-comment-tabs on-tab" href="#" data-tab="hot">热门</a>
+                            <a class="short-comment-tabs" href="#" data-tab="hot">热门</a>
                             <span>/</span>
                             <a class="j a_show_login " href="#" data-tab="follows">好友</a>
                         </div>
@@ -351,50 +351,30 @@
 
 
                         <div id="comments" class="comment-list hot show">
+
+
                             <ul>
-                    <span id="sss"></span>
-                                <li class="comment-item" data-cid="1818515090">
+
+                                <li class="comment-item">
                                     <div class="comment">
                                         <h3>
                 <span class="comment-vote">
-                    <span id="c-1818515090" class="vote-count">1</span>
-                        <a href="javascript:;" id="btn-1818515090" class="j a_show_login" data-cid="1818515090">有用</a>
+                        <a href=""class="j a_show_login">显示几颗星</a>
                 </span>
                                             <span class="comment-info">
-                    <a href="https://www.douban.com/people/nookey/">猜猜</a>
-                    <span>2019-08-13</span>
-                </span>
-                                        </h3>
-                                        <p class="comment-content">
-
-                                            <span class="short">感谢后浪。太喜欢了。</span>
-                                        </p>
-                                    </div>
-                                </li>
-
-
-                                <li class="comment-item" data-cid="1893343830">
-                                    <div class="comment">
-                                        <h3>
-                <span class="comment-vote">
-                    <span id="c-1893343830" class="vote-count">1</span>
-                        <a href="javascript:;" id="btn-1893343830" class="j a_show_login" data-cid="1893343830">有用</a>
-                </span>
-                                            <span class="comment-info">
-                    <a href="https://www.douban.com/people/sixucheng/">Sío</a>
+                    <a href="#">用户名</a>
                         <span class="user-stars allstar50 rating" title="力荐"></span>
                     <span>2019-08-06</span>
                 </span>
                                         </h3>
                                         <p class="comment-content">
-
                                             <span class="short">就买来准备以后挂墙上吧。。。</span>
                                         </p>
                                     </div>
                                 </li>
-
-
                             </ul>
+
+
                         </div>
                     </div>
                     <link rel="stylesheet" href="static/css/book/5b893040c800d5cd.css">
@@ -526,35 +506,39 @@
     //点击发表按扭，发表内容
     $("span.submit").click(function () {
         var txt = $(".message").html(); //获取输入框内容
-        var xing=document.getElementById("rating_simple2").value;
-        var time=new Date();
+        var star=document.getElementById("rating_simple2").value;
         $.ajax({
             type:"post",
             url:"comment",
-            data:{"txt":txt,"xing":xing},
+            data:{"txt":txt,"star":star,"bookid":"${book.bookid}"},
             datatype:"json",
-            success:function (data) {
-                if (data!=""){
-                    alert(data)
-                }
-                document.getElementById("sss").innerHTML="<li class=\"comment-item\" data-cid=\"1818515090\">\n" +
-                    "                                    <div class=\"comment\">\n" +
-                    "                                        <h3>\n" +
-                    "                <span class=\"comment-vote\">\n" +
-                    "                    <span id=\"c-1818515090\" class=\"vote-count\">1</span>\n" +
-                    "                        <a href=\"javascript:;\" id=\"btn-1818515090\" class=\"j a_show_login\" data-cid=\"1818515090\">有用</a>\n" +
-                    "                </span>\n" +
-                    "                                            <span class=\"comment-info\">\n" +
-                    "                    <a href=\"https://www.douban.com/people/nookey/\">猜猜</a>\n" +
-                    "                    <span>2019-08-13</span>\n" +
-                    "                </span>\n" +
-                    "                                        </h3>\n" +
-                    "                                        <p class=\"comment-content\">\n" +
-                    "\n" +
-                    "                                            <span class=\"short\">感谢后浪。太喜欢了。</span>\n" +
-                    "                                        </p>\n" +
-                    "                                    </div>\n" +
-                    "                                </li>";
+            success:function(data){
+               if(data=="false"){
+                   window.location.href="${pageContext.request.contextPath}/login";
+               }else {
+                   var msgname=data.messageusername;
+                   var msgtime=data.messagetime;
+                   var msg=data.message;
+                   console.log(data.messageid+","+data.messageuserid);
+                   $("#comments ul").append("<li class=\"comment-item\">\n" +
+                       "                                    <div class=\"comment\">\n" +
+                       "                                        <h3>\n" +
+                       "                <span class=\"comment-vote\">\n" +
+                       "                        <a href=\"\"class=\"j a_show_login\">显示几颗星</a>\n" +
+                       "                </span>\n" +
+                       "                                            <span class=\"comment-info\">\n" +
+                       "                    <a href=\"#\">"+msgname+"</a>\n" +
+                       "                        <span class=\"user-stars allstar50 rating\" title=\"力荐\"></span>\n" +
+                       "                    <span>"+msgtime+"</span>\n" +
+                       "                </span>\n" +
+                       "                                        </h3>\n" +
+                       "                                        <p class=\"comment-content\">\n" +
+                       "                                            <span class=\"short\">"+msg+"</span>\n" +
+                       "                                        </p>\n" +
+                       "                                    </div>\n" +
+                       "                                </li>");
+               }
+
             }
         })
     });

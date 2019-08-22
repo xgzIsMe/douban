@@ -1,16 +1,16 @@
 package controller;
 
+
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pojo.Book;
+import pojo.Message;
 import pojo.User;
 import service.BookService;
 import service.MessageService;
@@ -19,8 +19,9 @@ import service.UserService;
 
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -34,9 +35,11 @@ public class DouBanController {
     @Autowired
     private UserBookService userBookService;
     @RequestMapping("/")
-    public String show(Model model){
+    public String show(Model model) {
         List<Book> books=bookService.selectAll();
         model.addAttribute("books",books);
+       // request.getRequestDispatcher("douban.jsp").forward(request,response);
+
         return "douban";
     }
     @RequestMapping("/index")
@@ -104,8 +107,22 @@ public class DouBanController {
 
     @RequestMapping("/comment")
     @ResponseBody
-    public String showComment(HttpServletRequest request, @RequestParam String txt, @RequestParam String xing) throws IOException {
-        System.out.println(txt+xing);
-        return null;
+    public Message showComment(HttpServletRequest request, @RequestParam String star, @RequestParam String txt,@RequestParam String bookid){
+        System.out.println(bookid);
+        DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        Date date=new Date();
+        User user= (User) request.getSession().getAttribute("user");
+        Book book= bookService.selectByPrimaryKey(Integer.valueOf(bookid));
+        book.setBookcode(Integer.valueOf(star));
+        bookService.updateByPrimaryKey(book);
+        Message message=new Message();
+        message.setMessagebookid(book.getBookid());
+        message.setMessage(txt);
+        message.setMessagetime(format1.format(date));
+        message.setMessageuserid(user.getUserid());
+        message.setMessageusername(user.getUsername());
+        message.setMessagehand(star);
+        messageService.insert(message);
+      return  message;
     }
 }
