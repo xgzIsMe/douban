@@ -277,7 +277,7 @@
 
                     <div class="rec-sec">
     <span class="rec">
-<a href="#" class="j a_show_login lnk-sharing lnk-douban-sharing">推荐</a>
+<a href="recommend?bookid=${book.bookid}&userid=${user.userid}" class="j a_show_login lnk-sharing lnk-douban-sharing">推荐</a>
 </span>
                     </div>
 
@@ -354,7 +354,6 @@
 
 
                             <ul>
-
                                 <li class="comment-item">
                                     <div class="comment">
                                         <h3>
@@ -519,12 +518,13 @@
                    var msgname=data.messageusername;
                    var msgtime=data.messagetime;
                    var msg=data.message;
-                   console.log(data.messageid+","+data.messageuserid);
+                   var star=data.messagehand;
+                   $('.message').html('') // 清空输入框
                    $("#comments ul").append("<li class=\"comment-item\">\n" +
                        "                                    <div class=\"comment\">\n" +
                        "                                        <h3>\n" +
                        "                <span class=\"comment-vote\">\n" +
-                       "                        <a href=\"\"class=\"j a_show_login\">显示几颗星</a>\n" +
+                       "                        <input name=\"my_input\" value=\"5\" id=\"rating_simple\" type=\"hidden\">\n" +
                        "                </span>\n" +
                        "                                            <span class=\"comment-info\">\n" +
                        "                    <a href=\"#\">"+msgname+"</a>\n" +
@@ -538,7 +538,11 @@
                        "                                    </div>\n" +
                        "                                </li>");
                }
-
+                $("#rating_simple").webwidget_rating_sex({
+                    rating_star_length: '5',
+                    rating_initial_value: star,
+                    directory: 'images/'
+                });
             }
         })
     });

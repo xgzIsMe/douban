@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pojo.Book;
 import pojo.Message;
 import pojo.User;
+import pojo.UserBook;
 import service.BookService;
 import service.MessageService;
 import service.UserBookService;
@@ -21,6 +22,7 @@ import service.UserService;
 import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -38,8 +40,6 @@ public class DouBanController {
     public String show(Model model) {
         List<Book> books=bookService.selectAll();
         model.addAttribute("books",books);
-       // request.getRequestDispatcher("douban.jsp").forward(request,response);
-
         return "douban";
     }
     @RequestMapping("/index")
@@ -108,7 +108,6 @@ public class DouBanController {
     @RequestMapping("/comment")
     @ResponseBody
     public Message showComment(HttpServletRequest request, @RequestParam String star, @RequestParam String txt,@RequestParam String bookid){
-        System.out.println(bookid);
         DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
         Date date=new Date();
         User user= (User) request.getSession().getAttribute("user");
@@ -124,5 +123,21 @@ public class DouBanController {
         message.setMessagehand(star);
         messageService.insert(message);
       return  message;
+    }
+
+    @RequestMapping("/recommend")
+    public String showRecommend(Model model,String bookid,String userid){
+        UserBook userBook=new UserBook();
+        userBook.setBid(Integer.valueOf(bookid));
+        userBook.setUid(userid);
+        userBookService.insert(userBook);
+        List<UserBook> userBooks=userBookService.selectAll();//找到相应推荐书表的所有信息
+        List<Book> books=new ArrayList<>();
+        for (int i=userBooks.size()-1;i>=0;i--){
+            int n=userBooks.get(i).getBid();//找到相应书的id
+            books.add(bookService.selectByPrimaryKey(n));//通过倒序查找书id找到书，并加入到列表里面
+        }
+        model.addAttribute("books",books);
+        return "douban";
     }
 }

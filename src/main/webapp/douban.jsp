@@ -702,7 +702,7 @@
 
                 <div class="section weekly-top">
                     <div class="hd">
-                        <h2>畅销图书榜</h2>
+                        <h2>最新推荐图书榜</h2>
                     </div>
                     <div class="bd">
                         <ul class="nav-vendor">
@@ -717,7 +717,7 @@
                         </ul>
 
                         <ul class="list list-ranking">
-                            <c:forEach items="${books}" var="book" begin="20" end="29">
+                            <c:forEach items="${books}" var="book" begin="0" end="9">
                             <li class="item">
                                 <div class="book-info">
                                     <a href="#" class="name" target="_blank">${book.bookname}</a>
@@ -726,88 +726,6 @@
                                 <a href="#" target="_blank"><span class="buy-button">去购买</span></a>
                             </li>
                             </c:forEach>
-                        </ul>
-                        <ul class="list list-ranking" style="display: none;">
-                            <li class="item">
-                                <span class="rank-num">1.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/24749465/" class="name" target="_blank">断舍离</a>
-                                    <div class="author">山下英子</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=2710&amp;pos=1&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s24749465%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D23271503&amp;srcsubj=&amp;type=bkbuy&amp;subject=24749465" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">2.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/26647769/" class="name" target="_blank">人间失格</a>
-                                    <div class="author">太宰治</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=1880&amp;pos=2&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s26647769%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D23761145&amp;srcsubj=&amp;type=bkbuy&amp;subject=26647769" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">3.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/4913064/" class="name" target="_blank">活着</a>
-                                    <div class="author">余华</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=2800&amp;pos=3&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s4913064%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D25137790&amp;srcsubj=&amp;type=bkbuy&amp;subject=4913064" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">4.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/30475767/" class="name" target="_blank">人生海海</a>
-                                    <div class="author">麦家</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=5160&amp;pos=4&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s30475767%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D26921715&amp;srcsubj=&amp;type=bkbuy&amp;subject=30475767" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">5.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/26968034/" class="name" target="_blank">正面管教</a>
-                                    <div class="author">简·尼尔森 (Jane Nelsen)</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=3550&amp;pos=5&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s26968034%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D23990140&amp;srcsubj=&amp;type=bkbuy&amp;subject=26968034" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">6.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/26610864/" class="name" target="_blank">浮生六记</a>
-                                    <div class="author">沈复</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=3000&amp;pos=6&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s26610864%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D23751637&amp;srcsubj=&amp;type=bkbuy&amp;subject=26610864" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">7.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/30264297/" class="name" target="_blank">万般滋味，都是生活：丰子恺散文漫画精选集</a>
-                                    <div class="author">丰子恺</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=3500&amp;pos=7&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s30264297%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D25308985&amp;srcsubj=&amp;type=bkbuy&amp;subject=30264297" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">8.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/27012154/" class="name" target="_blank">我喜欢生命本来的样子</a>
-                                    <div class="author">周国平</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=4010&amp;pos=8&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s27012154%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D24198400&amp;srcsubj=&amp;type=bkbuy&amp;subject=27012154" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">9.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/26954760/" class="name" target="_blank">月亮与六便士</a>
-                                    <div class="author">[英] 威廉·萨默塞特·毛姆</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=3379&amp;pos=9&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s26954760%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D24175371&amp;srcsubj=&amp;type=bkbuy&amp;subject=26954760" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
-                            <li class="item">
-                                <span class="rank-num">10.</span>
-                                <div class="book-info">
-                                    <a href="https://book.douban.com/subject/27112607/" class="name" target="_blank">白夜行</a>
-                                    <div class="author">[日] 东野圭吾</div>
-                                </div>
-                                <a href="https://book.douban.com/link2/?pre=0&amp;vendor=dangdang&amp;srcpage=bestseller&amp;price=5960&amp;pos=10&amp;url=http%3A%2F%2Funion.dangdang.com%2Ftransfer.php%3Ffrom%3DP-306226-0-s27112607%26backurl%3Dhttp%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D25119332&amp;srcsubj=&amp;type=bkbuy&amp;subject=27112607" target="_blank"><span class="buy-button">去购买</span></a>
-                            </li>
                         </ul>
                     </div>
                 </div>
