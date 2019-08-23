@@ -18,4 +18,6 @@ public interface MessageService {
 
 
     int updateByPrimaryKey(Message record);
+
+    List<Message> selectByUserId(String userid);
 }

@@ -43,7 +43,7 @@ public class DouBanController {
         ModelAndView mv=new ModelAndView();
         List<Book> books=bookService.selectAll();
         mv.addObject("books",books);
-        List<UserBook> userBooks=userBookService.selectAll();//找到相应推荐书表的所有信息
+        List<UserBook> userBooks=userBookService.selectAll();//找到相应收藏书表的所有信息
         List<Book> pbook=new ArrayList<>();
         for (int i=userBooks.size()-1;i>=0;i--){
             int n=userBooks.get(i).getBid();//找到相应书的id
@@ -141,7 +141,7 @@ public class DouBanController {
     @RequestMapping("/recommend")
     public String showRecommend(String bookid,String userid){
         UserBook userBook=new UserBook();
-        List<UserBook> userBooks=userBookService.selectAll();//找到相应推荐书表的所有信息
+        List<UserBook> userBooks=userBookService.selectAll();//找到相应收藏书表的所有信息
         userBook.setId(userBooks.size()+1);
         userBook.setBid(Integer.valueOf(bookid));
         userBook.setUid(userid);
@@ -151,7 +151,13 @@ public class DouBanController {
 
     @RequestMapping("/user")
     public String showUser(HttpServletRequest request){
-        request.getSession().getAttribute("user");
+       User user= (User) request.getSession().getAttribute("user");
+        List<Message> messages=messageService.selectByUserId(user.getUserid());
+        List<UserBook> userBooks=userBookService.selectByUserId(user.getUserid());
+        List<Book> books=bookService.selectAll();
+        request.getSession().setAttribute("messages",messages);
+        request.getSession().setAttribute("userBooks",userBooks);
+        request.getSession().setAttribute("books",books);
         return "user";
     }
 }

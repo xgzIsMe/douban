@@ -105,29 +105,27 @@
                 </div>
 
                 <div class="sort " id="book">
-
-
                     <h2>
-                        我推荐
+                        我收藏
                         &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
                         <span class="pl">&nbsp;(
-                <a href="#" target="_blank">1本读过</a>
+                <a href="#" target="_blank">${userBooks.size()}本收藏过</a>
                 ) </span>
                     </h2>
-
-
-
+                    <c:forEach items="${userBooks}" var="userbook">
                     <div class="obssin">
-                        <div class="substatus">推荐过</div>
-                        <ul><li class="aob"><a href="#" title="魔幻玩具铺" target="_blank"><img src="static/img/s33445445.jpg" class="climg" alt="魔幻玩具铺"></a></li>
+                        <div class="substatus">收藏过</div>
+                        <ul>
+                            <c:forEach items="${books}" var="book">
+                                <c:if test="${book.bookid eq userbook.bid}">
+                                    <li class="aob"><a href="#" target="_blank"><img src="static/${book.bookimage}" class="climg"></a></li>
+                                </c:if>
+                            </c:forEach>
                         </ul>
                         <div class="clear"></div>
                         <div style="float: right;"><a><span>删除</span></a></div>
-
                     </div>
-
-
-
+                    </c:forEach>
                 </div>
 
                 <div class="sort" id="pinglun">
@@ -135,17 +133,24 @@
                         评论
                         &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
                         <span class="pl">&nbsp;(
-                <a href="#" target="_blank">1本评论过</a>
+                <a href="#" target="_blank">${messages.size()}本评论过</a>
                 ) </span>
                     </h2>
+                    <c:forEach items="${messages}" var="message">
                     <div class="obssin">
                         <div class="substatus">评论过</div>
-                        <ul><li class="aob"><a href="#"target="_blank"><img src="static/img/s33445445.jpg" class="climg" alt="魔幻玩具铺"></a></li>
+                        <ul>
+                            <c:forEach items="${books}" var="book">
+                                <c:if test="${book.bookid eq message.messagebookid}">
+                                    <li class="aob"><a href="#" target="_blank"><img src="static/${book.bookimage}" class="climg"></a></li>
+                                </c:if>
+                            </c:forEach>
                         </ul>
-                        <!--这里写留言内容@@@@@@@@@@-->
+                        ${message.message}
                         <div class="clear"></div>
                         <div style="float: right;"><a><span>删除</span></a></div>
                     </div>
+                    </c:forEach>
                 </div>
 
 

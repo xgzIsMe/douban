@@ -36,4 +36,9 @@ public class UserBookServiceImpl implements UserBookService {
     public int updateByPrimaryKey(UserBook record) {
         return userBookMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public List<UserBook> selectByUserId(String uid) {
+        return userBookMapper.selectByUserId(uid);
+    }
 }

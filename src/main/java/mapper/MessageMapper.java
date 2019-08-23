@@ -21,4 +21,6 @@ public interface MessageMapper {
 
 
     int updateByPrimaryKey(Message record);
+
+    List<Message> selectByUserId(String userid);
 }

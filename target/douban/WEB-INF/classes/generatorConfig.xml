@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- targetRuntime="MyBatis3Simple":生成简单版的CRUD MyBatis3:豪华版 -->
+    <classPathEntry location="D:\Program Files\apache-maven-3.6.0\repository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar"/>
+    <context id="DB2Tables" targetRuntime="MyBatis3Simple">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- jdbcConnection：指定如何连接到目标数据库 -->
+        <jdbcConnection password="" userId="root" connectionURL="jdbc:mysql://localhost:3306/douban?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC&amp;rewriteBatchedStatements=true&amp;allowPublicKeyRetrieval=true&amp;allowMultiQueries=true" driverClass="com.mysql.cj.jdbc.Driver">
+            <property name="nullCatalogMeansCurrent" value="true"/><!--表重名去重-->
+        </jdbcConnection>
+        <!-- -->
+        <javaTypeResolver>
+            <property value="false" name="forceBigDecimals"/>
+        </javaTypeResolver>
+        <!-- javaModelGenerator：指定javaBean的生成策略 targetPackage="test.model"：目标包名 targetProject="\MBGTestProject\src"：目标工程 -->
+        <javaModelGenerator targetProject=".\src\main\java" targetPackage="pojo">
+            <property value="true" name="enableSubPackages"/>
+            <property value="true" name="trimStrings"/>
+        </javaModelGenerator>
+        <!-- sqlMapGenerator：sql映射生成策略： -->
+        <sqlMapGenerator targetProject=".\src\main\resources" targetPackage="mapper">
+            <property value="true" name="enableSubPackages"/>
+        </sqlMapGenerator>
+        <!-- javaClientGenerator:指定mapper接口所在的位置 -->
+        <javaClientGenerator targetProject=".\src\main\java" targetPackage="mapper" type="XMLMAPPER">
+            <property value="true" name="enableSubPackages"/>
+        </javaClientGenerator>
+        <!-- 指定要逆向分析哪些表：根据表要创建javaBean -->
+      <!-- <table domainObjectName="Book" tableName="book"/>
+        <table domainObjectName="User" tableName="user"/>
+        <table domainObjectName="Message" tableName="message"/>-->
+        <table domainObjectName="UserBook" tableName="userbook"/>
+    </context>
+</generatorConfiguration>

@@ -15,4 +15,6 @@ public interface UserBookMapper {
     List<UserBook> selectAll();
 
     int updateByPrimaryKey(UserBook record);
+
+    List<UserBook> selectByUserId(String uid);
 }

@@ -35,4 +35,9 @@ public class MessageServiceImpl implements MessageService {
     public int updateByPrimaryKey(Message record) {
         return messageMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public List<Message> selectByUserId(String userid) {
+        return messageMapper.selectByUserId(userid);
+    }
 }
