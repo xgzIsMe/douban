@@ -25,6 +25,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class DouBanController {
@@ -115,6 +116,7 @@ public class DouBanController {
         book.setBookcode(Integer.valueOf(star));
         bookService.updateByPrimaryKey(book);
         Message message=new Message();
+        message.setMessageid(String.valueOf(UUID.randomUUID()));
         message.setMessagebookid(book.getBookid());
         message.setMessage(txt);
         message.setMessagetime(format1.format(date));

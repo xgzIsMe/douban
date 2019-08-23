@@ -517,6 +517,7 @@
                }else {
                    var msgname=data.messageusername;
                    var msgtime=data.messagetime;
+                   var msgid=data.messageid;
                    var msg=data.message;
                    var star=data.messagehand;
                    $('.message').html('') // 清空输入框
@@ -524,7 +525,7 @@
                        "                                    <div class=\"comment\">\n" +
                        "                                        <h3>\n" +
                        "                <span class=\"comment-vote\">\n" +
-                       "                        <input name=\"my_input\" value=\"5\" id=\"rating_simple\" type=\"hidden\">\n" +
+                       "                        <input name=\"my_input\" value=\"5\" id=\""+msgid+"\" type=\"hidden\">\n" +
                        "                </span>\n" +
                        "                                            <span class=\"comment-info\">\n" +
                        "                    <a href=\"#\">"+msgname+"</a>\n" +
@@ -538,7 +539,7 @@
                        "                                    </div>\n" +
                        "                                </li>");
                }
-                $("#rating_simple").webwidget_rating_sex({
+                $('#'+msgid).webwidget_rating_sex({
                     rating_star_length: '5',
                     rating_initial_value: star,
                     directory: 'images/'
