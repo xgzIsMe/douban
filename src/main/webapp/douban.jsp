@@ -36,7 +36,7 @@
     <div class="bd">
         <c:if test="${user!=null}">
             <div class="top-nav-info">
-            欢迎你：  <a href="user.jsp" class="nav-login" rel="nofollow">${user.username}</a>
+            欢迎你：  <a href="user" class="nav-login" rel="nofollow">${user.username}</a>
             </div>
         </c:if>
         <c:if test="${user==null}">
@@ -717,7 +717,7 @@
                         </ul>
 
                         <ul class="list list-ranking">
-                            <c:forEach items="${books}" var="book" begin="0" end="9">
+                            <c:forEach items="${userbook}" var="book" begin="0" end="9">
                             <li class="item">
                                 <div class="book-info">
                                     <a href="#" class="name" target="_blank">${book.bookname}</a>

@@ -42,7 +42,7 @@
     <div class="bd">
         <c:if test="${user!=null}">
             <div class="top-nav-info">
-                欢迎你：  <a href="user.jsp" class="nav-login" rel="nofollow">${user.username}</a>
+                欢迎你：  <a href="user" class="nav-login" rel="nofollow">${user.username}</a>
             </div>
         </c:if>
         <c:if test="${user==null}">
@@ -354,23 +354,35 @@
 
 
                             <ul>
-                                <li class="comment-item">
-                                    <div class="comment">
-                                        <h3>
+                                   <%-- <c:forEach items="${messages}" var="message">
+                                    <li class="comment-item">
+                                        <div class="comment">
+                                            <h3>
                 <span class="comment-vote">
-                        <a href=""class="j a_show_login">显示几颗星</a>
+                    <input name="my_input" id="${message.messageid}" type="hidden">
                 </span>
-                                            <span class="comment-info">
-                    <a href="#">用户名</a>
+                                                <span class="comment-info">
+                    <a href="#">${message.messageusername}</a>
                         <span class="user-stars allstar50 rating" title="力荐"></span>
-                    <span>2019-08-06</span>
+                    <span>${message.messagetime}</span>
                 </span>
-                                        </h3>
-                                        <p class="comment-content">
-                                            <span class="short">就买来准备以后挂墙上吧。。。</span>
-                                        </p>
-                                    </div>
-                                </li>
+                                            </h3>
+                                            <p class="comment-content">
+                                                <span class="short">${message.message}</span>
+                                            </p>
+                                        </div>
+                                    </li>
+                                        <script>
+                                            $(function () {
+                                                $("#${message.messageid}").webwidget_rating_sex({
+                                                    rating_star_length: '5',
+                                                    rating_initial_value: '${message.messagehand}',
+                                                    rating_function_name: '',//this is function name for click
+                                                    directory: 'images/'
+                                                });
+                                            })
+                                        </script>
+                                    </c:forEach>--%>
                             </ul>
 
 
@@ -525,7 +537,7 @@
                        "                                    <div class=\"comment\">\n" +
                        "                                        <h3>\n" +
                        "                <span class=\"comment-vote\">\n" +
-                       "                        <input name=\"my_input\" value=\"5\" id=\""+msgid+"\" type=\"hidden\">\n" +
+                       "                        <input name=\"my_input\" id=\""+msgid+"\" type=\"hidden\">\n" +
                        "                </span>\n" +
                        "                                            <span class=\"comment-info\">\n" +
                        "                    <a href=\"#\">"+msgname+"</a>\n" +

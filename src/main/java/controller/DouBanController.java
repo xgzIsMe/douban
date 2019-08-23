@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import pojo.Book;
 import pojo.Message;
 import pojo.User;
@@ -38,10 +39,19 @@ public class DouBanController {
     @Autowired
     private UserBookService userBookService;
     @RequestMapping("/")
-    public String show(Model model) {
+    public ModelAndView show() {
+        ModelAndView mv=new ModelAndView();
         List<Book> books=bookService.selectAll();
-        model.addAttribute("books",books);
-        return "douban";
+        mv.addObject("books",books);
+        List<UserBook> userBooks=userBookService.selectAll();//找到相应推荐书表的所有信息
+        List<Book> pbook=new ArrayList<>();
+        for (int i=userBooks.size()-1;i>=0;i--){
+            int n=userBooks.get(i).getBid();//找到相应书的id
+            pbook.add(bookService.selectByPrimaryKey(n));//通过倒序查找书id找到书，并加入到列表里面
+        }
+        mv.addObject("userbook",pbook);
+        mv.setViewName("douban");
+        return mv;
     }
     @RequestMapping("/index")
     public String showIndex(Model model){
@@ -53,11 +63,12 @@ public class DouBanController {
     @RequestMapping("/book")
     public String showBook(Model model, @RequestParam("bookid") Integer bookid){
         Book book=bookService.selectByPrimaryKey(bookid);
-        List<Book> books=bookService.selectAll();
         model.addAttribute("book",book);
-        model.addAttribute("books",books);
+        List<Message> messages=messageService.selectAll();
+        model.addAttribute("messages",messages);
         return "book";
     }
+
     @RequestMapping("/fiction")
     public String showFiction(@RequestParam(value = "pn", defaultValue = "1") Integer pn,Model model){
         // 引入PageHelper分页插件
@@ -128,18 +139,19 @@ public class DouBanController {
     }
 
     @RequestMapping("/recommend")
-    public String showRecommend(Model model,String bookid,String userid){
+    public String showRecommend(String bookid,String userid){
         UserBook userBook=new UserBook();
+        List<UserBook> userBooks=userBookService.selectAll();//找到相应推荐书表的所有信息
+        userBook.setId(userBooks.size()+1);
         userBook.setBid(Integer.valueOf(bookid));
         userBook.setUid(userid);
         userBookService.insert(userBook);
-        List<UserBook> userBooks=userBookService.selectAll();//找到相应推荐书表的所有信息
-        List<Book> books=new ArrayList<>();
-        for (int i=userBooks.size()-1;i>=0;i--){
-            int n=userBooks.get(i).getBid();//找到相应书的id
-            books.add(bookService.selectByPrimaryKey(n));//通过倒序查找书id找到书，并加入到列表里面
-        }
-        model.addAttribute("books",books);
-        return "douban";
+        return "forward:/";
+    }
+
+    @RequestMapping("/user")
+    public String showUser(HttpServletRequest request){
+        request.getSession().getAttribute("user");
+        return "user";
     }
 }

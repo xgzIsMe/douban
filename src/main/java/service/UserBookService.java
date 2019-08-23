@@ -5,17 +5,13 @@ import pojo.UserBook;
 import java.util.List;
 
 public interface UserBookService {
-    int deleteByPrimaryKey(String id);
-
+    int deleteByPrimaryKey(Integer id);
 
     int insert(UserBook record);
 
-
-    UserBook selectByPrimaryKey(String id);
-
+    UserBook selectByPrimaryKey(Integer id);
 
     List<UserBook> selectAll();
-
 
     int updateByPrimaryKey(UserBook record);
 }

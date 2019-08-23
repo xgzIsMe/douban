@@ -6,18 +6,13 @@ import org.springframework.stereotype.Repository;
 import pojo.UserBook;
 @Repository
 public interface UserBookMapper {
-
-    int deleteByPrimaryKey(String id);
-
+    int deleteByPrimaryKey(Integer id);
 
     int insert(UserBook record);
 
-
-    UserBook selectByPrimaryKey(String id);
-
+    UserBook selectByPrimaryKey(Integer id);
 
     List<UserBook> selectAll();
-
 
     int updateByPrimaryKey(UserBook record);
 }

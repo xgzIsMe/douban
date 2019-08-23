@@ -25,7 +25,7 @@
     <div class="bd">
         <c:if test="${user!=null}">
             <div class="top-nav-info">
-                欢迎你：  <a href="user.jsp" class="nav-login" rel="nofollow">${user.username}</a>
+                欢迎你：  <a href="user" class="nav-login" rel="nofollow">${user.username}</a>
             </div>
         </c:if>
         <c:if test="${user==null}">

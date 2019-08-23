@@ -11,8 +11,9 @@ import java.util.List;
 public class UserBookServiceImpl implements UserBookService {
     @Autowired
     private UserBookMapper userBookMapper;
+
     @Override
-    public int deleteByPrimaryKey(String id) {
+    public int deleteByPrimaryKey(Integer id) {
         return userBookMapper.deleteByPrimaryKey(id);
     }
 
@@ -22,7 +23,7 @@ public class UserBookServiceImpl implements UserBookService {
     }
 
     @Override
-    public UserBook selectByPrimaryKey(String id) {
+    public UserBook selectByPrimaryKey(Integer id) {
         return userBookMapper.selectByPrimaryKey(id);
     }
 
