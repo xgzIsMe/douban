@@ -8,7 +8,6 @@ import pojo.UserBook;
 public interface UserBookMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int deleteByBid(int bid);
 
     int insert(UserBook record);
 

@@ -38,11 +38,6 @@ public class UserBookServiceImpl implements UserBookService {
     }
 
     @Override
-    public int deleteByBid(int bid) {
-        return userBookMapper.deleteByBid(bid);
-    }
-
-    @Override
     public List<UserBook> selectByUserId(String uid) {
         return userBookMapper.selectByUserId(uid);
     }

@@ -123,7 +123,7 @@
                             </c:forEach>
                         </ul>
                         <div class="clear"></div>
-                        <div style="float: right;"><a href="del?bid=${userbook.bid}"><span>删除</span></a></div>
+                        <div style="float: right;"><a href="del?bid=${userbook.bid}&uid=${userbook.uid}"><span>删除</span></a></div>
                     </div>
                     </c:forEach>
                 </div>

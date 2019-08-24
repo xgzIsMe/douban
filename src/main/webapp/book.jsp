@@ -381,7 +381,7 @@
                     <span>${message.messagetime}</span>
                 </span>
                                                 </h3>
-                                                <button id="">关注</button>
+                                                <button id="${message.messageusername}">关注</button>
                                                 <p class="comment-content">
                                                     <span class="short">${message.message}</span>
                                                 </p>
@@ -395,6 +395,21 @@
                                                     rating_function_name: '',//this is function name for click
                                                     directory: 'images/'
                                                 });
+                                            })
+                                        </script>
+                                        <script>
+                                            $(function () {
+                                                $("#${message.messageusername}").click(function () {
+                                                    $.ajax({
+                                                        type:"get",
+                                                        url:"gather",
+                                                        data:{"bookid":${book.bookid}},
+                                                        type:"json",
+                                                        success:function (data) {
+                                                            alert(data.msg)
+                                                        }
+                                                    })
+                                                })
                                             })
                                         </script>
                                     </c:if>
@@ -567,7 +582,7 @@
                        "                    <span>"+msgtime+"</span>\n" +
                        "                </span>\n" +
                        "                                        </h3>\n" +
-                           " <button id=\"\">关注</button>"+
+                           " <button id=\""+msgname+"\">关注</button>"+
                        "                                        <p class=\"comment-content\">\n" +
                        "                                            <span class=\"short\">"+msg+"</span>\n" +
                        "                                        </p>\n" +

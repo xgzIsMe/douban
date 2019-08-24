@@ -35,6 +35,7 @@
       <!-- <table domainObjectName="Book" tableName="book"/>
         <table domainObjectName="User" tableName="user"/>
         <table domainObjectName="Message" tableName="message"/>-->
-        <table domainObjectName="UserBook" tableName="userbook"/>
+        <!--<table domainObjectName="UserBook" tableName="userbook"/>-->
+        <table tableName="usered" domainObjectName="Usered"/>
     </context>
 </generatorConfiguration>

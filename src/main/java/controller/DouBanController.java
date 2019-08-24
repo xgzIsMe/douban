@@ -6,15 +6,13 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import pojo.*;
-import service.BookService;
-import service.MessageService;
-import service.UserBookService;
-import service.UserService;
+import service.*;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +33,8 @@ public class DouBanController {
     private MessageService messageService;
     @Autowired
     private UserBookService userBookService;
+    @Autowired
+    private UseredService useredService;
     @RequestMapping("/")
     public ModelAndView show() {
         ModelAndView mv=new ModelAndView();
@@ -168,9 +168,23 @@ public class DouBanController {
     }
 
     @RequestMapping("/del")
-    public String showDel(String bid){
-        userBookService.deleteByBid(Integer.valueOf(bid));
-        return "user";
+    public String showDel(String bid,String uid){
+        List<UserBook>userBooks=userBookService.selectByUserId(uid);
+        for (UserBook userBook:userBooks){
+            if(bid.equals(userBook.getBid().toString())){
+                userBookService.deleteByPrimaryKey(userBook.getId());
+            }
+        }
+        return "forward:/user";
     }
 
+    @RequestMapping("/gather")
+    @ResponseBody
+    public Ajax showGather(String bookid){
+        Ajax ajax=new Ajax();
+        System.out.println(bookid);
+       // useredService.insert(usered);
+        ajax.setMsg("关注成功");
+        return ajax;
+    }
 }
