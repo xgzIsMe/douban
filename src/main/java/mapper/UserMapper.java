@@ -8,7 +8,7 @@ import pojo.User;
 public interface UserMapper {
 
     int deleteByPrimaryKey(String userid);
-
+    
 
     int insert(User record);
 

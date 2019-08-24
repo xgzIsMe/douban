@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import pojo.Book;
-import pojo.Message;
-import pojo.User;
-import pojo.UserBook;
+import pojo.*;
 import service.BookService;
 import service.MessageService;
 import service.UserBookService;
@@ -139,14 +136,23 @@ public class DouBanController {
     }
 
     @RequestMapping("/recommend")
-    public String showRecommend(String bookid,String userid){
+    @ResponseBody
+    public Ajax showRecommend(String bookid, String userid) {
         UserBook userBook=new UserBook();
+        Ajax ajax=new Ajax();
         List<UserBook> userBooks=userBookService.selectAll();//找到相应收藏书表的所有信息
+        for (UserBook userBook1:userBooks){
+            if (userBook1.getUid().equals(userid)&&userBook1.getBid()==Integer.valueOf(bookid)){
+                ajax.setMsg("收藏失败");
+                 return ajax;
+            }
+        }
         userBook.setId(userBooks.size()+1);
         userBook.setBid(Integer.valueOf(bookid));
         userBook.setUid(userid);
         userBookService.insert(userBook);
-        return "forward:/";
+        ajax.setMsg("收藏成功");
+        return ajax;
     }
 
     @RequestMapping("/user")
@@ -160,4 +166,11 @@ public class DouBanController {
         request.getSession().setAttribute("books",books);
         return "user";
     }
+
+    @RequestMapping("/del")
+    public String showDel(String bid){
+        userBookService.deleteByBid(Integer.valueOf(bid));
+        return "user";
+    }
+
 }

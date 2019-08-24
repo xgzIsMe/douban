@@ -15,5 +15,7 @@ public interface UserBookService {
 
     int updateByPrimaryKey(UserBook record);
 
+    int deleteByBid(int bid);
+
     List<UserBook> selectByUserId(String uid);
 }

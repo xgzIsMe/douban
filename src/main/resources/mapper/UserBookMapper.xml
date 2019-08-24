@@ -10,6 +10,10 @@
     delete from userbook
     where id = #{id,jdbcType=INTEGER}
   </delete>
+    <delete id="deleteByBid" parameterType="java.lang.Integer">
+        delete from userbook
+    where bid = #{bid,jdbcType=INTEGER}
+    </delete>
   <insert id="insert" parameterType="pojo.UserBook">
     insert into userbook (id, uid, bid)
     values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=VARCHAR}, #{bid,jdbcType=INTEGER})

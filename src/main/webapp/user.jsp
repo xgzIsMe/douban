@@ -86,7 +86,7 @@
                 <div class="clear"></div>
 
                 <div id="user_guide">
-                    <p class="guide">${user.username}，这里是你的主页，用来展示你的生活和发现，也是别人认识你的地方。</p>
+                    <p class="guide">${user.username}，这里是主页，用来展示生活和发现。</p>
                     <ol>
                         <li class="user-icon">
                             <h5 class="done"><span>上传头像</span></h5>
@@ -123,7 +123,7 @@
                             </c:forEach>
                         </ul>
                         <div class="clear"></div>
-                        <div style="float: right;"><a><span>删除</span></a></div>
+                        <div style="float: right;"><a href="del?bid=${userbook.bid}"><span>删除</span></a></div>
                     </div>
                     </c:forEach>
                 </div>
@@ -197,6 +197,7 @@
                 <div id="friend">
                 </div>
                 <p class="rev-link"><a href="#">&gt;&nbsp;我被0人关注</a></p>
+                <p class="rev-link"><a href="#">&gt;&nbsp;我关注0人</a></p>
                 <div class="sort " id="doulist">
                 </div>
             </div>

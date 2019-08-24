@@ -277,7 +277,24 @@
 
                     <div class="rec-sec">
     <span class="rec">
-<a href="recommend?bookid=${book.bookid}&userid=${user.userid}" class="j a_show_login lnk-sharing lnk-douban-sharing">收藏</a>
+<%--<a href="recommend?bookid=${book.bookid}&userid=${user.userid}" class="j a_show_login lnk-sharing lnk-douban-sharing">收藏</a>--%>
+        <button id="shoucang" class="j a_show_login lnk-sharing lnk-douban-sharing" value="收藏">收藏</button>
+        <script>
+            $(function () {
+                $("#shoucang").click(function () {
+                    $.ajax({
+                        type:"get",
+                        url:"recommend",
+                        data:{"bookid":${book.bookid},"userid":${user.userid}},
+                        datatype:"json",
+                        success:function (data) {
+                            var a=data.msg;
+                            alert(a)
+                        }
+                    })
+                })
+            })
+        </script>
 </span>
                     </div>
 
@@ -325,7 +342,6 @@
 
                     </div>
 
-
                     <link rel="stylesheet" href="static/css/book/style.css">
 
                     <div id="author_subject" class="author-wrapper"><div data-reactroot="" class="author-subject"></div></div>
@@ -349,29 +365,28 @@
                     </div>
                     <div id="comment-list-wrapper" class="indent">
 
-
-                        <div id="comments" class="comment-list hot show">
-
-
+                        <div class="comment-list hot show">
                             <ul>
-                                   <%-- <c:forEach items="${messages}" var="message">
-                                    <li class="comment-item">
-                                        <div class="comment">
-                                            <h3>
+                                <c:forEach items="${messages}" var="message">
+                                    <c:if test="${message.messagebookid eq book.bookid}">
+                                        <li class="comment-item">
+                                            <div class="comment">
+                                                <h3>
                 <span class="comment-vote">
                     <input name="my_input" id="${message.messageid}" type="hidden">
                 </span>
-                                                <span class="comment-info">
+                                                    <span class="comment-info">
                     <a href="#">${message.messageusername}</a>
                         <span class="user-stars allstar50 rating" title="力荐"></span>
                     <span>${message.messagetime}</span>
                 </span>
-                                            </h3>
-                                            <p class="comment-content">
-                                                <span class="short">${message.message}</span>
-                                            </p>
-                                        </div>
-                                    </li>
+                                                </h3>
+                                                <button id="">关注</button>
+                                                <p class="comment-content">
+                                                    <span class="short">${message.message}</span>
+                                                </p>
+                                            </div>
+                                        </li>
                                         <script>
                                             $(function () {
                                                 $("#${message.messageid}").webwidget_rating_sex({
@@ -382,9 +397,15 @@
                                                 });
                                             })
                                         </script>
-                                    </c:forEach>--%>
+                                    </c:if>
+                                </c:forEach>
                             </ul>
 
+                        </div>
+
+                        <div id="comments" class="comment-list hot show">
+
+                            <ul></ul>
 
                         </div>
                     </div>
@@ -528,6 +549,7 @@
                    window.location.href="${pageContext.request.contextPath}/login";
                }else {
                    var msgname=data.messageusername;
+                   var msguserid=data.messageuserid;
                    var msgtime=data.messagetime;
                    var msgid=data.messageid;
                    var msg=data.message;
@@ -540,11 +562,12 @@
                        "                        <input name=\"my_input\" id=\""+msgid+"\" type=\"hidden\">\n" +
                        "                </span>\n" +
                        "                                            <span class=\"comment-info\">\n" +
-                       "                    <a href=\"#\">"+msgname+"</a>\n" +
+                       "                    <a href=\"douban?userid="+msguserid+"\">"+msgname+"</a>\n" +
                        "                        <span class=\"user-stars allstar50 rating\" title=\"力荐\"></span>\n" +
                        "                    <span>"+msgtime+"</span>\n" +
                        "                </span>\n" +
                        "                                        </h3>\n" +
+                           " <button id=\"\">关注</button>"+
                        "                                        <p class=\"comment-content\">\n" +
                        "                                            <span class=\"short\">"+msg+"</span>\n" +
                        "                                        </p>\n" +

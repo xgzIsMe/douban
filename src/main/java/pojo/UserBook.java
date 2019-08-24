@@ -33,4 +33,13 @@ public class UserBook {
     public void setBid(Integer bid) {
         this.bid = bid;
     }
+
+    @Override
+    public String toString() {
+        return "UserBook{" +
+                "id=" + id +
+                ", uid='" + uid + '\'' +
+                ", bid=" + bid +
+                '}';
+    }
 }
