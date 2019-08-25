@@ -395,16 +395,12 @@
                                                     rating_function_name: '',//this is function name for click
                                                     directory: 'images/'
                                                 });
-                                            })
-                                        </script>
-                                        <script>
-                                            $(function () {
                                                 $("#${message.messageusername}").click(function () {
                                                     $.ajax({
                                                         type:"get",
                                                         url:"gather",
-                                                        data:{"bookid":${book.bookid}},
-                                                        type:"json",
+                                                        data:{"humanedid":${message.messageuserid},"humanid":${user.userid}},
+                                                        datatype:"json",
                                                         success:function (data) {
                                                             alert(data.msg)
                                                         }

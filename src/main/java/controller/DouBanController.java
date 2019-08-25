@@ -147,7 +147,6 @@ public class DouBanController {
                  return ajax;
             }
         }
-        userBook.setId(userBooks.size()+1);
         userBook.setBid(Integer.valueOf(bookid));
         userBook.setUid(userid);
         userBookService.insert(userBook);
@@ -157,10 +156,32 @@ public class DouBanController {
 
     @RequestMapping("/user")
     public String showUser(HttpServletRequest request){
-       User user= (User) request.getSession().getAttribute("user");
+        User user= (User) request.getSession().getAttribute("user");
+        System.out.println(user);
         List<Message> messages=messageService.selectByUserId(user.getUserid());
         List<UserBook> userBooks=userBookService.selectByUserId(user.getUserid());
         List<Book> books=bookService.selectAll();
+        List<User>users=new ArrayList<>();
+        List<User>users1=new ArrayList<>();
+        List<Usered> usereds=useredService.selectAll();
+        List<Usered> human=new ArrayList<>();
+        List<Usered> humaned=new ArrayList<>();
+        for (Usered usered:usereds){
+            if (usered.getHumanid().equals(user.getUserid())){
+                  human.add(usered);
+            }else if (usered.getHumanedid().equals(user.getUserid())){
+                humaned.add(usered);
+            }
+        }
+
+        for (Usered usered:human){
+            users.add(userService.selectByPrimaryKey(usered.getHumanedid()));
+        }
+        for (Usered usered:humaned){
+            users1.add(userService.selectByPrimaryKey(usered.getHumanid()));
+        }
+        request.getSession().setAttribute("human",users);
+        request.getSession().setAttribute("humaned",users1);
         request.getSession().setAttribute("messages",messages);
         request.getSession().setAttribute("userBooks",userBooks);
         request.getSession().setAttribute("books",books);
@@ -180,10 +201,18 @@ public class DouBanController {
 
     @RequestMapping("/gather")
     @ResponseBody
-    public Ajax showGather(String bookid){
+    public Ajax showGather(String humanedid,String humanid){
+        System.out.println(humanedid+"  "+humanid);
         Ajax ajax=new Ajax();
-        System.out.println(bookid);
-       // useredService.insert(usered);
+        Usered usered=new Usered();
+        if (humanedid.equals(humanid)){
+            ajax.setMsg("不能自己关注自己");
+            return ajax;
+        }
+        usered.setId(useredService.selectAll().size()+1);
+        usered.setHumanedid(humanedid);
+        usered.setHumanid(humanid);
+        useredService.insert(usered);
         ajax.setMsg("关注成功");
         return ajax;
     }

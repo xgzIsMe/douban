@@ -15,6 +15,11 @@
         ${user.username}
     </title>
     <meta http-equiv="Pragma" content="no-cache">
+
+    <link rel="stylesheet" href="static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="static/js/jquery-3.4.1.min.js" ></script>
+    <script src="static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
     <link href="static/css/user/douban.css" rel="stylesheet" type="text/css">
     <link href="static/css/user/base.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="static/css/user/6604e3c29e80e55f.css">
@@ -195,9 +200,53 @@
                 </div>
 
                 <div id="friend">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseOne">
+                                        我关注的人
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        <c:forEach items="${human}" var="human">
+                                        <li class="list-group-item">${human.username}</li>
+                                        </c:forEach>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel-group" id="accordion1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion1"
+                                       href="#collapseTwo">
+                                        关注我的人
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        <c:forEach items="${humaned}" var="humaned">
+                                            <li class="list-group-item">${humaned.username}</li>
+                                        </c:forEach>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
-                <p class="rev-link"><a href="#">&gt;&nbsp;我被0人关注</a></p>
-                <p class="rev-link"><a href="#">&gt;&nbsp;我关注0人</a></p>
                 <div class="sort " id="doulist">
                 </div>
             </div>
