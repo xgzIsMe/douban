@@ -32,7 +32,7 @@
                             <option value="">请选择分类</option>
                             <option value="小说">小说</option>
                             <option value="历史">历史</option>
-                            <option value="科幻">科幻</option>
+                            <option value="散文">散文</option>
                             <option value="言情">言情</option>
                         </select>
                     </li>
@@ -42,17 +42,16 @@
                     <a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()" > 搜索</a></li>
             </ul>
         </div>
-        <table class="table table-hover text-center">
+        <table class="table table-hover text-center" id="liuzhi">
             <tr>
                 <th width="100" style="text-align:left; padding-left:20px;">ID</th>
                 <th>图片</th>
                 <th>简介</th>
                 <th>书名</th>
                 <th>分类</th>
-                <th width="10%">更新时间</th>
                 <th width="310">操作</th>
             </tr>
-            <volist name="list" id="vo">
+            <tbody name="list" id="vo">
 <c:if test="${!empty page.list}">
     <c:forEach items="${page.list}" var="b">
                 <tr>
@@ -62,8 +61,7 @@
                     <td width="10%"><img src="static/${b.bookimage}" alt="" width="70" height="50" /></td>
                     <td>${b.bookdcb}</td>
                     <td><font color="#00CC99">${b.bookname}</font></td>
-                    <td>${b.bookcategory}</td>
-                    <td>${b.bookyear}</td>
+                    <td width="5%">${b.bookcategory}</td>
                     <td><div class="button-group"> <a class="button border-main" href="add.jsp"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
                 </tr>
     </c:forEach>
@@ -94,14 +92,34 @@
                         </c:if>
                         <a href="showbook?pn=${page.pages}" rel="external nofollow" >末页</a> </div></td>
                 </tr>
-            </volist></table>
+            </tbody></table>
     </div>
 </form>
 <script type="text/javascript">
-
     function changesearch() {
-        var vs = document.getElementById("cid").value;
-        alert(vs);
+        var fenlei = document.getElementById("cid").value;
+        $("#vo").html("");
+        $.ajax({
+            type:"get",
+            url:"fenlei",
+            data:{"fenlei":fenlei},
+            datatype:"json",
+            success:function (data) {
+            $.each(data,function (index,book) {
+                $("#vo").append("<tr>\n" +
+                    "                    <td style=\"text-align:left; padding-left:20px;\"><input type=\"checkbox\" name=\"id[]\" value=\""+book.bookid+"\" />\n" +
+                    "                        "+book.bookid+"</td>\n" +
+                    "\n" +
+                    "                    <td width=\"10%\"><img src=\"static/"+book.bookimage+"\" alt=\"\" width=\"70\" height=\"50\" /></td>\n" +
+                    "                    <td>"+book.bookdcb+"</td>\n" +
+                    "                    <td width=\"10%\"><font color=\"#00CC99\">"+book.bookname+"</font></td>\n" +
+                    "                    <td width=\"5%\">"+book.bookcategory+"</td>\n" +
+                    "                    <td><div class=\"button-group\"> <a class=\"button border-main\" href=\"add.jsp\"><span class=\"icon-edit\"></span> 修改</a> <a class=\"button border-red\" href=\"javascript:void(0)\" onclick=\"return del(1,1,1)\">" +
+                    "<span class=\"icon-trash-o\"></span> 删除</a> </div></td>\n" +
+                    "                </tr>")
+            })
+            }
+        })
     }
     //单个删除
     function del(id,mid,iscid){

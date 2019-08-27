@@ -25,7 +25,7 @@
         <form method="post" class="form-x" action="">
             <div class="form-group">
                 <div class="label">
-                    <label>标题：</label>
+                    <label>书名：</label>
                 </div>
                 <div class="field">
                     <input type="text" class="input w50" value="" name="title" data-validate="required:请输入标题" />
@@ -62,10 +62,10 @@
                     <div class="field">
                         <select name="cid" class="input w50">
                             <option value="">请选择分类</option>
-                            <option value="">小说</option>
-                            <option value="">科幻</option>
-                            <option value="">历史</option>
-                            <option value="">言情</option>
+                            <option value="小说">小说</option>
+                            <option value="散文">散文</option>
+                            <option value="历史">历史</option>
+                            <option value="言情">言情</option>
                         </select>
                         <div class="tips"></div>
                     </div>
@@ -96,15 +96,6 @@
                 </div>
                 <div class="field">
                     <input type="text" class="input w50" name="authour" value=""  />
-                    <div class="tips"></div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="label">
-                    <label>点击次数：</label>
-                </div>
-                <div class="field">
-                    <input type="text" class="input w50" name="views" value="" data-validate="member:只能为数字"  />
                     <div class="tips"></div>
                 </div>
             </div>

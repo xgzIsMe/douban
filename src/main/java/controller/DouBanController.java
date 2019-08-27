@@ -6,7 +6,6 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -54,7 +53,7 @@ public class DouBanController {
     public String showIndex(Model model){
         List<Book> books=bookService.selectAll();
         model.addAttribute("books",books);
-        return "douban";
+        return "redirect:/";
     }
 
     @RequestMapping("/book")
@@ -79,6 +78,22 @@ public class DouBanController {
         model.addAttribute("page",page);
         return  "fiction";
     }
+
+
+    @RequestMapping("/fenlei")
+    @ResponseBody
+    public List<Book> showFenlei(String fenlei){
+        System.out.println(fenlei);
+        List<Book>books=bookService.selectAll();
+        List<Book> books1=new ArrayList<>();
+        for (Book book:books){
+            if (book.getBookcategory().equals(fenlei)){
+                books1.add(book);
+            }
+        }
+        return books1;
+    }
+
     @RequestMapping("/search")
     public String showSearch(Model model,String search_text,@RequestParam(value = "pn", defaultValue = "1") Integer pn){
         model.addAttribute("search_text",search_text);
