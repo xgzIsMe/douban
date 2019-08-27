@@ -375,7 +375,7 @@
                 <span class="comment-vote">
                     <input name="my_input" id="${message.messageid}" type="hidden">
                 </span>
-                                                    <span class="comment-info">
+                <span class="comment-info">
                     <a href="#">${message.messageusername}</a>
                         <span class="user-stars allstar50 rating" title="力荐"></span>
                     <span>${message.messagetime}</span>
@@ -560,7 +560,6 @@
                    window.location.href="${pageContext.request.contextPath}/login";
                }else {
                    var msgname=data.messageusername;
-                   var msguserid=data.messageuserid;
                    var msgtime=data.messagetime;
                    var msgid=data.messageid;
                    var msg=data.message;
@@ -573,7 +572,7 @@
                        "                        <input name=\"my_input\" id=\""+msgid+"\" type=\"hidden\">\n" +
                        "                </span>\n" +
                        "                                            <span class=\"comment-info\">\n" +
-                       "                    <a href=\"douban?userid="+msguserid+"\">"+msgname+"</a>\n" +
+                       "                    <a href=\"#\">"+msgname+"</a>\n" +
                        "                        <span class=\"user-stars allstar50 rating\" title=\"力荐\"></span>\n" +
                        "                    <span>"+msgtime+"</span>\n" +
                        "                </span>\n" +

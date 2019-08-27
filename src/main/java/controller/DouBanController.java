@@ -96,7 +96,7 @@ public class DouBanController {
              if (user.getUsername().equals(username)&&user.getPassword().equals(password)){
                  request.getSession().setAttribute("user",user);
                  if (user.getUserstate()==0){
-                     return null;
+                     return "houtai";
                  }
                  return "redirect:/";
              }
