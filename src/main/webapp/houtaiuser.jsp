@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="zh-cn">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,66 +34,19 @@
             <th>性别</th>
             <th width="250">操作</th>
         </tr>
-
+    <c:forEach items="${users}" var="user">
         <tr>
-            <td>17</td>
-            <td>公司简介</td>
-            <td>1</td>
+            <td>${user.userid}</td>
+            <td>${user.username}</td>
+            <td>${user.sex}</td>
             <td>
                 <div class="button-group">
                     <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
-                    <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
+                    <a class="button border-red" href="javascript:void(0)" onclick="return del(${user.userid})"><span class="icon-trash-o"></span> 删除</a>
                 </div>
             </td>
         </tr>
-
-        <tr>
-            <td>17</td>
-            <td>产品中心</td>
-            <td>1</td>
-            <td>
-                <div class="button-group">
-                    <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
-                    <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td>17</td>
-            <td>新闻资讯</td>
-            <td>1</td>
-            <td>
-                <div class="button-group">
-                    <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
-                    <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td>17</td>
-            <td>人才招聘</td>
-            <td>1</td>
-            <td>
-                <div class="button-group">
-                    <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
-                    <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td>17</td>
-            <td>联系我们</td>
-            <td>1</td>
-            <td>
-                <div class="button-group">
-                    <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
-                    <a class="button border-red" href="javascript:void(0)" onclick="return del(17)"><span class="icon-trash-o"></span> 删除</a>
-                </div>
-            </td>
-        </tr>
+    </c:forEach>
         <tr>
             <td colspan="8"><div class="pagelist"> <a href="">上一页</a> <span class="current">1</span><a href="">2</a><a href="">3</a><a href="">下一页</a><a href="">尾页</a> </div></td>
         </tr>

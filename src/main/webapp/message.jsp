@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="zh-cn">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -41,18 +42,19 @@
                 <th width="120">留言时间</th>
                 <th>操作</th>
             </tr>
+            <c:forEach items="${messages}" var="message">
             <tr>
-                <td><input type="checkbox" name="id[]" value="1" />
-                    1</td>
-                <td>神夜</td>
-                <td>13420925611</td>
-                <td>564379992@qq.com</td>
-                <td>深圳市民治街道</td>
-                <td>这是一套后台UI，喜欢的朋友请多多支持谢谢。</td>
-                <td>2016-07-01</td>
+                <td><input type="checkbox" name="id[]" value="${message.messageid}" />
+                        ${message.messageid}</td>
+                <td>${message.messagebookid}</td>
+                <td>${message.messageuserid}</td>
+                <td>${message.messageusername}</td>
+                <td>${message.messagehand}</td>
+                <td>${message.message}</td>
+                <td>${message.messagetime}</td>
                 <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
             </tr>
-
+            </c:forEach>
 
             <tr>
                 <td colspan="8"><div class="pagelist"> <a href="">上一页</a> <span class="current">1</span><a href="">2</a><a href="">3</a><a href="">下一页</a><a href="">尾页</a> </div></td>

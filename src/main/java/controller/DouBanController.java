@@ -216,4 +216,30 @@ public class DouBanController {
         ajax.setMsg("关注成功");
         return ajax;
     }
+
+    @RequestMapping("/message")
+    public String showMessage(Model model){
+        List<Message> messages=messageService.selectAll();
+        model.addAttribute("messages",messages);
+        return "message";
+    }
+
+    @RequestMapping("/houtaiuser")
+    public String showHouTaiUser(Model model){
+        List<User>users=userService.selectAll();
+        model.addAttribute("users",users);
+        return "houtaiuser";
+    }
+
+    @RequestMapping("/showbook")
+    public String showBook(@RequestParam(value = "pn", defaultValue = "1") Integer pn,Model model){
+        PageHelper.startPage(pn, 4);
+        // startPage后面紧跟的这个查询就是一个分页查询
+        List<Book> books = bookService.selectAll();
+        // 使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
+        // 封装了详细的分页信息,包括有我们查询出来的数据，传入连续显示的页数
+        PageInfo page = new PageInfo(books, 3);
+        model.addAttribute("page",page);
+        return "showbook";
+    }
 }
