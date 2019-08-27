@@ -22,14 +22,14 @@
     <div class="logo margin-big-left fadein-top">
         <h1><img src="static/img/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
     </div>
-    <div class="head-l"><a class="button button-little bg-green" href="" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;
-        <a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> </div>
+    <div class="head-l"><a class="button button-little bg-green" href="index" target="_blank"><span class="icon-home"></span> 前台首页</a> &nbsp;&nbsp;
+        <a class="button button-little bg-red" href="tui"><span class="icon-power-off"></span> 退出登录</a> </div>
 </div>
 <div class="leftnav">
     <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
     <h2><span class="icon-user"></span>基本设置</h2>
     <ul style="display:block">
-        <li><a href="pass" target="right"><span class="icon-caret-right"></span>修改密码</a></li>
+        <li><a href="pass.jsp" target="right"><span class="icon-caret-right"></span>修改密码</a></li>
         <li><a href="message" target="right"><span class="icon-caret-right"></span>留言管理</a></li>
         <li><a href="houtaiuser" target="right"><span class="icon-caret-right"></span>用户管理</a></li>
     </ul>

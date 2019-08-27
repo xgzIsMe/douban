@@ -28,12 +28,12 @@
                 <li> <a class="button border-main icon-plus-square-o" href="addbook.jsp"> 添加内容</a> </li>
                 <if condition="$iscid eq 1">
                     <li>
-                        <select name="cid" class="input" style="width:200px; line-height:17px;" onchange="changesearch()">
+                        <select name="cid" id="cid" class="input" style="width:200px; line-height:17px;" onchange="changesearch()">
                             <option value="">请选择分类</option>
-                            <option value="">小说</option>
-                            <option value="">历史</option>
-                            <option value="">科幻</option>
-                            <option value="">言情</option>
+                            <option value="小说">小说</option>
+                            <option value="历史">历史</option>
+                            <option value="科幻">科幻</option>
+                            <option value="言情">言情</option>
                         </select>
                     </li>
                 </if>
@@ -99,6 +99,10 @@
 </form>
 <script type="text/javascript">
 
+    function changesearch() {
+        var vs = document.getElementById("cid").value;
+        alert(vs);
+    }
     //单个删除
     function del(id,mid,iscid){
         if(confirm("您确定要删除吗?")){

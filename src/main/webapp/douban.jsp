@@ -37,6 +37,7 @@
         <c:if test="${user!=null}">
             <div class="top-nav-info">
             欢迎你：  <a href="user" class="nav-login" rel="nofollow">${user.username}</a>
+                <a href="tui" class="nav-login" rel="nofollow">退出登录</a>
             </div>
         </c:if>
         <c:if test="${user==null}">

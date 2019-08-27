@@ -103,7 +103,11 @@ public class DouBanController {
          }
         return "login";
     }
-
+    @RequestMapping("/tui")
+    public String showTui(HttpServletRequest request){
+        request.getSession().removeAttribute("user");
+        return "redirect:/";
+    }
     @RequestMapping("/register")
     public String showRegister(String username, String password)
     {
@@ -157,7 +161,9 @@ public class DouBanController {
     @RequestMapping("/user")
     public String showUser(HttpServletRequest request){
         User user= (User) request.getSession().getAttribute("user");
-        System.out.println(user);
+        if (user.getUserstate()==0){
+            return "houtai";
+        }
         List<Message> messages=messageService.selectByUserId(user.getUserid());
         List<UserBook> userBooks=userBookService.selectByUserId(user.getUserid());
         List<Book> books=bookService.selectAll();

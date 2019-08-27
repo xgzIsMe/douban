@@ -29,7 +29,7 @@
                 </div>
                 <div class="field">
                     <label style="line-height:33px;">
-                        admin
+                        ${user.username}
                     </label>
                 </div>
             </div>
