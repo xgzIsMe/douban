@@ -3,6 +3,7 @@ package controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import jedisCache.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,13 +21,12 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Controller
 public class DouBanController {
+    @Autowired
+    RedisUtil redisUtil;
     @Autowired
     private BookService bookService;
     @Autowired
@@ -42,15 +42,36 @@ public class DouBanController {
         ModelAndView mv=new ModelAndView();
         List<Book> books=bookService.selectAll();
         mv.addObject("books",books);
-        List<UserBook> userBooks=userBookService.selectAll();//找到相应收藏书表的所有信息
-        List<Book> pbook=new ArrayList<>();
-        for (int i=userBooks.size()-1;i>=0;i--){
-            int n=userBooks.get(i).getBid();//找到相应书的id
-            pbook.add(bookService.selectByPrimaryKey(n));//通过倒序查找书id找到书，并加入到列表里面
+        for (Book book:books){
+            redisUtil.zadd("bookpaihang",book.getBookcode(),book.getBookname());
         }
-        mv.addObject("userbook",pbook);
+        Set<String> stringSet=redisUtil.zrevrange("bookpaihang",0,-1);
+
+        mv.addObject("userbook",stringSet);
         mv.setViewName("douban");
         return mv;
+    }
+
+    @RequestMapping("/comment")
+    @ResponseBody
+    public Message showComment(HttpServletRequest request, @RequestParam String star, @RequestParam String txt,@RequestParam String bookid){
+        DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        Date date=new Date();
+        User user= (User) request.getSession().getAttribute("user");
+        Book book= bookService.selectByPrimaryKey(Integer.valueOf(bookid));
+        redisUtil.zincrby("bookpaihang", Integer.parseInt(star),book.getBookname());
+        book.setBookcode(Integer.valueOf(star));
+        bookService.updateByPrimaryKey(book);
+        Message message=new Message();
+        message.setMessageid(String.valueOf(UUID.randomUUID()));
+        message.setMessagebookid(book.getBookid());
+        message.setMessage(txt);
+        message.setMessagetime(format1.format(date));
+        message.setMessageuserid(user.getUserid());
+        message.setMessageusername(user.getUsername());
+        message.setMessagehand(star);
+        messageService.insert(message);
+        return  message;
     }
     @RequestMapping("/index")
     public String showIndex(Model model){
@@ -136,26 +157,6 @@ public class DouBanController {
         return "login";
     }
 
-    @RequestMapping("/comment")
-    @ResponseBody
-    public Message showComment(HttpServletRequest request, @RequestParam String star, @RequestParam String txt,@RequestParam String bookid){
-        DateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
-        Date date=new Date();
-        User user= (User) request.getSession().getAttribute("user");
-        Book book= bookService.selectByPrimaryKey(Integer.valueOf(bookid));
-        book.setBookcode(Integer.valueOf(star));
-        bookService.updateByPrimaryKey(book);
-        Message message=new Message();
-        message.setMessageid(String.valueOf(UUID.randomUUID()));
-        message.setMessagebookid(book.getBookid());
-        message.setMessage(txt);
-        message.setMessagetime(format1.format(date));
-        message.setMessageuserid(user.getUserid());
-        message.setMessageusername(user.getUsername());
-        message.setMessagehand(star);
-        messageService.insert(message);
-      return  message;
-    }
 
     @RequestMapping("/recommend")
     @ResponseBody

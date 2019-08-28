@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+    <bean class="redis.clients.jedis.JedisPoolConfig" id="config">
+        <property value="10" name="maxIdle"/>
+        <property value="30" name="maxTotal"/>
+        <property value="20000" name="maxWaitMillis"/>
+    </bean>
+    <bean class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" id="factory">
+        <!--服务器配置 -->
+        <property value="localhost" name="hostName"/>
+        <!-- 端口配置 -->
+        <property value="6379" name="port"/>
+        <!-- 连接池配置对象 -->
+        <property name="poolConfig" ref="config"/>
+    </bean>
+    <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" id="jdkser"/>
+    <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" id="stringser"/>
+    <!--配置redistemplate-->
+    <bean class="org.springframework.data.redis.core.RedisTemplate" id="template">
+        <property name="connectionFactory" ref="factory"/>
+        <property name="keySerializer" ref="stringser"/>
+        <property name="valueSerializer" ref="jdkser"/>
+    </bean>
+    <bean class="jedisCache.RedisMessageListener" id="redisMsgListener">
+        <property name="redisTemplate" ref="template"/>
+    </bean>
+    <bean class="org.springframework.data.redis.listener.RedisMessageListenerContainer" id="topicContainer" destroy-method="destroy">
+        <!--Redis连接工厂 -->
+        <property name="connectionFactory" ref="factory"/>
+        <!--连接池，这里只要线程池生存，才能继续监听 -->
+        <property name="taskExecutor">
+            <bean class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler">
+                <property value="2" name="poolSize"/>
+            </bean>
+        </property>
+        <!--消息监听Map -->
+        <property name="messageListeners">
+            <map>
+                <!--配置监听者，key-ref和bean id定义一致 -->
+                <entry key-ref="redisMsgListener">
+                    <!--监听类 -->
+                    <bean class="org.springframework.data.redis.listener.ChannelTopic">
+                        <constructor-arg value="chat"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

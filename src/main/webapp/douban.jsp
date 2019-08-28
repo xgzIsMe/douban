@@ -703,7 +703,7 @@
 
                 <div class="section weekly-top">
                     <div class="hd">
-                        <h2>最新收藏图书榜</h2>
+                        <h2>高分图书榜</h2>
                     </div>
                     <div class="bd">
                         <ul class="nav-vendor">
@@ -721,8 +721,7 @@
                             <c:forEach items="${userbook}" var="book" begin="0" end="9">
                             <li class="item">
                                 <div class="book-info">
-                                    <a href="#" class="name" target="_blank">${book.bookname}</a>
-                                    <div class="author">${book.bookauthor}</div>
+                                    <a href="#" class="name" target="_blank">${book}</a>
                                 </div>
                                 <a href="#" target="_blank"><span class="buy-button">去购买</span></a>
                             </li>

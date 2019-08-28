@@ -57,7 +57,6 @@
                 <tr>
                     <td style="text-align:left; padding-left:20px;"><input type="checkbox" name="id[]" value="${b.bookid}" />
                         ${b.bookid}</td>
-
                     <td width="10%"><img src="static/${b.bookimage}" alt="" width="70" height="50" /></td>
                     <td>${b.bookdcb}</td>
                     <td><font color="#00CC99">${b.bookname}</font></td>
