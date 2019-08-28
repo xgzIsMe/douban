@@ -2,9 +2,10 @@ package mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 import pojo.Usered;
-@Repository
+@Mapper
 public interface UseredMapper {
     int deleteByPrimaryKey(Integer id);
 

@@ -5,7 +5,7 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 <context:component-scan base-package="pojo,mapper,service,interceptor"/>
-    <context:property-placeholder location="classpath:db.properties"/>
+    <context:property-placeholder location="classpath:*.properties"/>
     <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
         <property name="driverClassName" value="${driver}"/>
         <property name="url" value="${url}"/>
@@ -49,4 +49,5 @@
     <aop:config>
         <aop:advisor pointcut="execution(* service.*.*(..))" advice-ref="txAdvice"/>
     </aop:config>
+
 </beans>

@@ -1,8 +1,10 @@
 package mapper;
 
 import java.util.List;
-import pojo.Book;
 
+import org.apache.ibatis.annotations.Mapper;
+import pojo.Book;
+@Mapper
 public interface BookMapper {
     int deleteByPrimaryKey(Integer bookid);
 

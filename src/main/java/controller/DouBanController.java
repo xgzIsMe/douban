@@ -9,12 +9,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import pojo.*;
 import service.*;
 
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -220,6 +223,13 @@ public class DouBanController {
         return "forward:/user";
     }
 
+    @RequestMapping("/deluser")
+    public String showDelUser(String userid){
+        userService.deleteByPrimaryKey(userid);
+        return "redirect:/houtaiuser";
+    }
+
+
     @RequestMapping("/gather")
     @ResponseBody
     public Ajax showGather(String humanedid,String humanid){
@@ -262,5 +272,27 @@ public class DouBanController {
         PageInfo page = new PageInfo(books, 3);
         model.addAttribute("page",page);
         return "showbook";
+    }
+
+
+@RequestMapping("/addbook")
+    public String showAddBook(@RequestParam("filename") MultipartFile file, String bookname,String bookcategory,String bookdcb,String bookauthor){
+        Book book=new Book();
+    String name=file.getOriginalFilename();
+        //上传文件
+        try {
+            file.transferTo(new File("D:\\WorkSpace\\douban\\src\\main\\webapp\\static\\img\\" +name));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String filename="img/"+name;
+        book.setBookname(bookname);
+        book.setBookcategory(bookcategory);
+        book.setBookdcb(bookdcb);
+        book.setBookauthor(bookauthor);
+        book.setBookimage(filename);
+        bookService.insert(book);
+        //存储数据库，只需要把filename写入数据库
+        return "redirect:/showbook";
     }
 }

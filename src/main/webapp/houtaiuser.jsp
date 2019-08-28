@@ -42,7 +42,7 @@
             <td>
                 <div class="button-group">
                     <a type="button" class="button border-main" href="#"><span class="icon-edit"></span>修改</a>
-                    <a class="button border-red" href="javascript:void(0)" onclick="return del(${user.userid})"><span class="icon-trash-o"></span> 删除</a>
+                    <a class="button border-red" href="deluser?userid=${user.userid}"><span class="icon-trash-o"></span> 删除</a>
                 </div>
             </td>
         </tr>
@@ -52,11 +52,4 @@
         </tr>
     </table>
 </div>
-<script>
-    function del(id){
-        if(confirm("您确定要删除吗?")){
-
-        }
-    }
-</script>
 </body></html>
