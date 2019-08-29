@@ -33,5 +33,17 @@
                 <property value="2" name="poolSize"/>
             </bean>
         </property>
+        <!--消息监听Map -->
+        <property name="messageListeners">
+            <map>
+                <!--配置监听者，key-ref和bean id定义一致 -->
+                <entry key-ref="redisMsgListener">
+                    <!--监听类 -->
+                    <bean class="org.springframework.data.redis.listener.ChannelTopic">
+                        <constructor-arg value="chat"/>
+                    </bean>
+                </entry>
+            </map>
+        </property>
     </bean>
 </beans>

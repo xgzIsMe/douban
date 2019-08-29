@@ -1,12 +1,12 @@
 package jedisCache;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.Message;
+import org.springframework.data.redis.connection.MessageListener;
 import org.springframework.data.redis.core.RedisTemplate;
 
-public class RedisMessageListener {
-    @Autowired
+public class RedisMessageListener implements MessageListener {
     private RedisTemplate redisTemplate;
+    @Override
     public void onMessage(Message message, byte[] bytes) {
         //获得消息的内容
         byte[] body=message.getBody();

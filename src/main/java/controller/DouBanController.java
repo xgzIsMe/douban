@@ -42,12 +42,13 @@ public class DouBanController {
         ModelAndView mv=new ModelAndView();
         List<Book> books=bookService.selectAll();
         mv.addObject("books",books);
-        if (redisUtil.zrange("bookpaihang",0,-1)==null){
+        if (redisUtil.zrange("bookpaihang",0,-1).isEmpty()){
             for (Book book:books){
                 redisUtil.zadd("bookpaihang",book.getBookcode(),book.getBookname());
             }
         }
         Set<String> stringSet=redisUtil.zrevrange("bookpaihang",0,-1);
+        System.out.println(stringSet);
         mv.addObject("userbook",stringSet);
         mv.setViewName("douban");
         return mv;
@@ -61,8 +62,6 @@ public class DouBanController {
         User user= (User) request.getSession().getAttribute("user");
         Book book= bookService.selectByPrimaryKey(Integer.valueOf(bookid));
         redisUtil.zincrby("bookpaihang", Integer.parseInt(star),book.getBookname());
-        book.setBookcode(Integer.valueOf(star));
-        bookService.updateByPrimaryKey(book);
         Message message=new Message();
         message.setMessageid(String.valueOf(UUID.randomUUID()));
         message.setMessagebookid(book.getBookid());
