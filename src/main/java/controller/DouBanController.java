@@ -42,11 +42,12 @@ public class DouBanController {
         ModelAndView mv=new ModelAndView();
         List<Book> books=bookService.selectAll();
         mv.addObject("books",books);
-        for (Book book:books){
-            redisUtil.zadd("bookpaihang",book.getBookcode(),book.getBookname());
+        if (redisUtil.zrange("bookpaihang",0,-1)==null){
+            for (Book book:books){
+                redisUtil.zadd("bookpaihang",book.getBookcode(),book.getBookname());
+            }
         }
         Set<String> stringSet=redisUtil.zrevrange("bookpaihang",0,-1);
-
         mv.addObject("userbook",stringSet);
         mv.setViewName("douban");
         return mv;

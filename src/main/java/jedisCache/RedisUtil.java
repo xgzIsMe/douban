@@ -2,13 +2,40 @@ package jedisCache;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import pojo.Book;
 import redis.clients.jedis.Jedis;
 
+import java.util.List;
 import java.util.Set;
 
 @Component
 @Slf4j
 public class RedisUtil{
+    public Long sadd(String key, String members) {
+        Jedis jedis = null;
+        Long res = null;
+        try {
+            jedis=new Jedis("127.0.0.1",6379);
+            res = jedis.sadd(key, members);
+        } catch (Exception e) {
+
+            log.error(e.getMessage());
+        }
+        return res;
+    }
+
+    public  Set<String> smembers(String key) {
+        Jedis jedis = null;
+        Set<String> res = null;
+        try {
+            jedis=new Jedis("127.0.0.1",6379);
+            res = jedis.smembers(key);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
+        return res;
+    }
+
     public Long zadd(String key, int score, String member) {
         Jedis jedis = null;
         Long res = null;
@@ -38,7 +65,6 @@ public class RedisUtil{
             jedis=new Jedis("127.0.0.1",6379);
             return jedis.zrange(key, min, max);
         } catch (Exception e) {
-
             log.error(e.getMessage());
         }
         return null;

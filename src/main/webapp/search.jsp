@@ -156,7 +156,7 @@
                             <c:forEach items="${page.list}" var="f">
                                 <li class="subject-item">
                                     <div class="pic">
-                                        <a class="nbg" href="#" >
+                                        <a class="nbg" href="book?bookid=${f.bookid}" >
                                             <img class="" src="static/${f.bookimage}" width="90">
                                         </a>
                                     </div>
