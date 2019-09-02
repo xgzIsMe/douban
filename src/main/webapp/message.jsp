@@ -52,7 +52,7 @@
                 <td>${message.messagehand}</td>
                 <td>${message.message}</td>
                 <td>${message.messagetime}</td>
-                <td><div class="button-group"> <a class="button border-red" href="javascript:void(0)" onclick="return del(1)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+                <td><div class="button-group"> <a class="button border-red" href="delMessage?messageid=${message.messageid}"><span class="icon-trash-o"></span> 删除</a> </div></td>
             </tr>
             </c:forEach>
 
@@ -64,11 +64,6 @@
 </form>
 <script type="text/javascript">
 
-    function del(id){
-        if(confirm("您确定要删除吗?")){
-
-        }
-    }
 
     $("#checkall").click(function(){
         $("input[name='id[]']").each(function(){

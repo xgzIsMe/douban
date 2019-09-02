@@ -22,7 +22,7 @@
 <div class="panel admin-panel">
     <div class="panel-head"><strong><span class="icon-key"></span> 修改会员密码</strong></div>
     <div class="body-content">
-        <form method="post" class="form-x" action="">
+        <form method="post" class="form-x" action="updatePass">
             <div class="form-group">
                 <div class="label">
                     <label>管理员帐号：</label>

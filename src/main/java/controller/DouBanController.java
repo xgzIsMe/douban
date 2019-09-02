@@ -48,7 +48,6 @@ public class DouBanController {
             }
         }
         Set<String> stringSet=redisUtil.zrevrange("bookpaihang",0,-1);
-        System.out.println(stringSet);
         mv.addObject("userbook",stringSet);
         mv.setViewName("douban");
         return mv;
@@ -295,5 +294,17 @@ public class DouBanController {
         bookService.insert(book);
         //存储数据库，只需要把filename写入数据库
         return "redirect:/showbook";
+    }
+    @RequestMapping("/updatePass")
+    public String showUpdatePass(HttpServletRequest request,String mpass,String newpass){
+        User user= (User) request.getSession().getAttribute("user");
+        user.setPassword(newpass);
+        userService.updateByPrimaryKey(user);
+        return "pass";
+    }
+    @RequestMapping("/delMessage")
+    public String showdelMessage(String messageid){
+        messageService.deleteByPrimaryKey(messageid);
+        return "message";
     }
 }
