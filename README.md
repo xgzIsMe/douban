@@ -1,5 +1,8 @@
-# douban
-这是基于SSM+mysql+redis的一个仿豆瓣书评的网站,主要实现了评分，收藏，关注，排行榜，后台管理等功能，使用redis做缓存实现排行榜。
+项目时间：2019-08到2019-09
+项目名称：梦笔生花书评网站
+项目描述：
+   该项目主要实现了详细书籍信息，用户评论，星级评分，排行榜，搜索，关注人，图书分类，收藏书籍，用户登录，后台管理等功能。系统功能模块为：用户模块，图书模块，后台管理模块，分类模块，评论模块等，运用了SSM框架，mysql,redis数据库。
+我的职责：开发设计与实现管理
 运行结果如下：
 ![image](https://github.com/91XiaoSir/douban/blob/master/img/1.png)
 ![image](https://github.com/91XiaoSir/douban/blob/master/img/2.png)
