@@ -18,7 +18,7 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
       <spring.vision>5.1.5.RELEASE</spring.vision>   <!-- 控制版本号-->
-      <json.version>2.9.9</json.version>
+      <json.version>2.12.1</json.version>
   </properties>
 
   <dependencies>
