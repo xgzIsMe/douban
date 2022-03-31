@@ -17,7 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-      <spring.vision>5.1.5.RELEASE</spring.vision>   <!-- 控制版本号-->
+      <spring.vision>5.3.18</spring.vision>   <!-- 控制版本号-->
       <json.version>2.9.9</json.version>
   </properties>
 
